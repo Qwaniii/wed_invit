@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Podkova:wght@400..800&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=dccf1668-a334-4154-9a8d-55dd302bef91&lang=ru_RU" type="text/javascript">
+    </script>
+
+    <title>Сайт-приглашение на свадьбу ОК</title>
+</head>
+<body>
+    <section class="start-view" id="start">
+        <div class="start-view__container">
+                      <!-- <img class="bird animate__animated animate__flipInY" src="/img/img_bird2.png">
+                      <h1 class="animate__animated animate__fadeInDown">Рады пригласить вас на нашу свадьбу!</h1>
+                      <img class="ok animate__animated animate__zoomIn" src="/img/OK-var9_new.png">
+                      <h1 class="animate__animated animate__fadeInUp">27 июля 2024</h1> -->
+            <img class="bird" src="/img/img_bird2.png">
+            <h1 >Рады пригласить вас на нашу свадьбу!</h1>
+            <img class="ok" src="/img/OK-var9_new.png">
+            <h1 >27 июля 2024</h1>
+        </div>
+        <div class="img">
+            <img class="img__left_top" src="/img/flowers_left_top.png">
+        </div>
+        <div class="timer-container">
+            <div class="timer">
+                <div class="timer-inner"><span id="days">00</span><span id="end-word-day">дней</span></div>
+                <div class="timer-inner"><span id="hours">00</span><span id="end-word-hour">часов</span></div>
+                <div class="timer-inner"><span id="minutes">00</span><span id="end-word-min">минут</span></div>
+                <div class="timer-inner"><span id="seconds">00</span><span id="end-word-sec">секунд</span></div>
+            </div>
+        </div>
+    </section>
+    <div class="container-main">
+      
+          <!-- дорогие родные -->
+          <section class="greetings" id="greetings">
+            <!-- <div class="family-img"></div> -->
+            <div class="family-text">
+              <h1 id="dear">Дорогие родные и близкие!</h3>
+              <p id="dear-text">Совсем скоро в нашей жизни произойдет очень важное событие – наша свадьба!<br>Мы верим и надеемся, что этот день станет красивым началом долгой и счастливой жизни. <br><br>Позвольте пригласить вас разделить с нами радость этого дня. Подарите свою поддержку и добрые пожелания, а мы в свою очередь поделимся частичкой нашего счастья.</p>
+            </div>
+          </section>
+
+          <!-- место проведения  -->
+          <section class="place" id="place">
+              <h1 class="place__main">
+                  Место проведения
+              </h1>
+              <p class="place__text">
+                  Дворец бракосочетания N1
+                  Малый Харитоньевский
+              </p>
+              <!-- <div class="place__button">
+                  <a class="place__button-link" href="https://yandex.ru/profile/1241193732?no-distribution=1&amp;source=wizbiz_new_map_single" target="_blank" rel="noopener">Открыть карту</a>
+              </div> -->
+              <div id="map" style="width: 100%; height: 400px"></div>
+          </section>
+
+          <!-- дата проведения -->
+          <section id="date">
+            <div class="date-text">            
+            </div>
+            <h1>Дата проведения</h1>
+
+            <!-- календарь  -->
+            <table cellpadding="5" id="calendar1">
+              <thead>
+                <tr><td colspan="7">
+                <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+              <tbody>
+            </table>
+            <div>
+              <p>Добавить в календарь</p>
+              <div class="add-to" id="add">
+                <a target="_blank" href="https://www.addevent.com/event/mz20501734+google"><img src="/svg/google.svg"></a>
+                <a target="_blank" href="https://www.addevent.com/event/mz20501734+apple"><img src="/svg/mac.svg"></a>
+                <a target="_blank" href="https://www.addevent.com/event/mz20501734+office365"><img src="/svg/365.svg"></a>
+                <a target="_blank" href="https://www.addevent.com/event/mz20501734+outlook"><img src="/svg/outlook.svg"></a>
+                <a target="_blank" href="https://www.addevent.com/event/mz20501734+yahoo"><img src="/svg/yahoo.svg"></a>
+  <!-- 
+                <a target="_blank" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=Свадьба Олег и Ксения&amp;dates=20240727T150000Z/20240727T205500Z&amp;details=&amp;location=&amp;sprop=&amp;sprop=name:"><img src="https://www.google.com/calendar/images/ext/gc_button1_ru.gif"></a> -->
+              </div>  
+          </div>         
+          </section>
+
+          <section class="chat">
+            <div class="chat-text">
+              <h3>Общий чат</h3>
+            </div>
+          </section>
+          <section class="quiz">
+            <div class="quiz-text">
+              <h3>Подтвердите присутствие</h3>
+              <button class="done">Я приду</button>
+            </div>
+          </section>
+    </div>
+    
+    <!-- модальное окно с опросом  -->
+    <div class="popup__wrapper">
+      <div class="popup" id="popup-form">
+        <iframe src="https://forms.yandex.ru/u/65dc6d6243f74f03b963527d/?iframe=1" frameborder="0" name="ya-form-65dc6d6243f74f03b963527d" width="350"></iframe>
+        <div class="popup-close">
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu-->
+    <div class="menu-wrapper">
+    </div>
+    <nav class="menu">
+        <div class="container1">
+            <div class="menu-burger__header">
+                <span></span>
+            </div>
+            <ul class="topmenu">
+                <li><a href="#start" class="a">главная</a></li>
+                <li><a href="#greetings" class="a">приглашение</a></li>
+                <!-- <li><a href="" class="a">Производственные мощности</a></li> -->
+                <li><a href="#place" class="a">место проведения</a></li>
+                <li><a href="#date" class="a">дата проведения</a></li>
+                <li><a href="" class="a">общий чат</a></li>
+                <li><a href="" class="a">ваш отклик</a></li>
+                <li><a href="#add" class="a">добавить в календарь</a></li>
+            </ul>
+            <div class="img-bottom">
+              <img src="/img/flow.png" alt="flowers">
+            </div>
+        </div>
+    </nav>
+    <script src="/timerBack.js"></script>
+    <script src="/index.js"></script>
+    <script src="/scroll.js"></script>
+    <script src="https://forms.yandex.ru/_static/embed.js"></script>
+    <script src="/burgMenu.js"></script>
+    <script src="/maps.js"></script>
+    <script src="/calendar.js"></script>
+  </body>
+</html>

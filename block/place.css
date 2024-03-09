@@ -1,0 +1,48 @@
+/* place */
+
+.place {
+    min-height: var(--minimal-height-block);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.place__main {
+    font-size: var(--font-first)
+}
+
+.place__main.active {
+    animation: var(--animation-scale)
+
+}
+
+.place__text {
+    font-size: var(--font-text);
+    font-family: var(--font-family-other);
+}
+
+.place__text.active,
+#map.active {
+    animation: var(--animation-block);
+}
+
+
+
+
+/* .place__button {
+    background-color: rgb(255, 155, 88);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+
+.place__button-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+} */

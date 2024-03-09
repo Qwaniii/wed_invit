@@ -1,0 +1,97 @@
+@import url(/block/greeting.css);
+@import url(/block/timer.css);
+@import url(/block/burger.css);
+@import url(/block/popup.css);
+@import url(/block/start-view.css);
+@import url(/block/place.css);
+@import url(/block/date.css);
+
+
+:root {
+  --font-first: 35px;
+  --font-text: 20px;
+  --font-family-main: "Cormorant Infant", serif;
+  --font-family-other: "Podkova", serif;
+  --color-primary: rgb(255, 202, 122);
+  --color-text: rgb(116, 116, 116);
+  --color-text-hover: rgba(219, 137, 82, 0.87);;
+  --color-back-light: rgba(253, 197, 112, 0.4);
+  --color-button:  #ffab6796;
+  --color-button-hover:  #ffab67c9;
+  --minimal-height-block: 600px;
+  --animation-block: fadeRightIn 1.5s ease-out;
+  --animation-scale: scaleFade 1.5s ease-out;
+}
+
+
+
+/* скролбар */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f2bf93;
+  background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .25) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(255, 255, 255, .25) 50%,
+                    rgba(255, 255, 255, .25) 75%,
+                    transparent 75%,
+                    transparent);
+}
+
+/* --------------------- */
+
+body {
+    margin: 0;
+    font-family: var(--font-family-main);
+    overflow-x: hidden
+}
+
+.container-main {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+  /* animation settings */
+
+.animate__heartBeat {
+  --animate-duration: 1.5s;
+}
+
+@keyframes fadeRightIn {
+  0% {
+      transform: translateX(3%);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  
+}
+
+@keyframes scaleFade {
+  0% {
+    transform: scale(.92);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

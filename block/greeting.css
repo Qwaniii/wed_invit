@@ -1,0 +1,41 @@
+.greetings {
+    min-height: var(--minimal-height-block);
+    display: flex;
+}
+
+.family-text {
+    width: 100%;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.family-text h1{
+    font-size: var(--font-first);
+}
+
+
+.family-text p{
+    font-size: var(--font-text);
+    font-family: var(--font-family-other);
+}
+
+
+
+#dear.active {
+    animation: var(--animation-scale);
+    animation-duration: 2s;
+}
+
+#dear-text.active {
+    animation: var(--animation-block);
+}
+
+
+
+@media (max-width: 849px) {
+    .family-text {
+        padding: 0 20px;
+    }
+}
