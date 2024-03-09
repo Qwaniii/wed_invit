@@ -1,3 +1,14 @@
+
+// настройка под мобильные браузеры
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+
 const popup = document.querySelector("#popup-form")
 const popupWrapper = document.querySelector(".popup__wrapper")
 const btn = document.querySelector(".done")
