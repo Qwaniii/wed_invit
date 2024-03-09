@@ -1,10 +1,10 @@
-@import url(/block/greeting.css);
-@import url(/block/timer.css);
-@import url(/block/burger.css);
-@import url(/block/popup.css);
-@import url(/block/start-view.css);
-@import url(/block/place.css);
-@import url(/block/date.css);
+@import url(../block/greeting.css);
+@import url(../block/timer.css);
+@import url(../block/burger.css);
+@import url(../block/popup.css);
+@import url(../block/start-view.css);
+@import url(../block/place.css);
+@import url(../block/date.css);
 
 
 :root {
