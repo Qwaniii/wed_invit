@@ -48,9 +48,8 @@ function updateScroll() {
   let visibleDearText = document.querySelector("#dear-text")
 
   if (windowBottomPosition >= greetingsOffset) {
-    // visibleDear.classList.add("active")
-    visibleDear.style.animation = "--animation-scale"
-    visibleDearText.classList.add("active");
+    visibleDear.style.animation = "var(--animation-scale) .6s forwards";
+    visibleDearText.style.animation = "var(--animation-block) 1.5s forwards";
   }
 
   // блок место
@@ -61,13 +60,12 @@ function updateScroll() {
   let visiblePlaceText = document.querySelector(".place__text")
 
   if (windowBottomPosition >= placeOffset) {
-    visiblePlace.classList.add("active")
-    visiblePlaceText.classList.add("active")
-    visiblePlace.style.setProperty('--animate-duration', '1s')
+    visiblePlace.style.animation = "var(--animation-scale) .6s forwards";
+    visiblePlaceText.style.animation = "var(--animation-block) 1.3s forwards";
   }
 
   if(windowBottomPosition >= mapOffset) {
-    visibleMap.classList.add("active")
+    visibleMap.style.animation = "var(--animation-block) 1.6s forwards";
   }
 
 }

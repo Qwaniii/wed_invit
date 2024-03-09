@@ -20,7 +20,7 @@
   --color-button-hover:  #ffab67c9;
   --minimal-height-block: 600px;
   --animation-block: fadeRightIn 1.5s ease-out;
-  --animation-scale: scaleFade 1.5s linear;
+  --animation-scale: scaleFade 2s ease-out;
 }
 
 
@@ -88,7 +88,6 @@ body {
 
   50% {
     transform: scale(1.03);
-    opacity: 1;
   }
 
   100% {

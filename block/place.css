@@ -12,22 +12,19 @@
 }
 
 .place__main {
-    font-size: var(--font-first)
+    font-size: var(--font-first);
+    opacity: 0;
 }
 
-.place__main.active {
-    animation: var(--animation-scale)
-
-}
 
 .place__text {
     font-size: var(--font-text);
     font-family: var(--font-family-other);
+    opacity: 0;
 }
 
-.place__text.active,
-#map.active {
-    animation: var(--animation-block);
+#map {
+    opacity: 0;
 }
 
 

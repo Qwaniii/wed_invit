@@ -23,16 +23,10 @@
 
 
 
-#dear {
+#dear,
+#dear-text  {
     opacity: 0;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
 }
-
-#dear-text.active {
-    animation: var(--animation-block);
-}
-
 
 
 @media (max-width: 849px) {
