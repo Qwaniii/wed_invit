@@ -23,9 +23,10 @@
 
 
 
-#dear.active {
-    animation: var(--animation-scale);
-    animation-duration: 2s;
+#dear {
+    opacity: 0;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
 }
 
 #dear-text.active {

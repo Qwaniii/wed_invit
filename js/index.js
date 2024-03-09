@@ -48,9 +48,9 @@ function updateScroll() {
   let visibleDearText = document.querySelector("#dear-text")
 
   if (windowBottomPosition >= greetingsOffset) {
-    visibleDear.classList.add("active")
+    // visibleDear.classList.add("active")
+    visibleDear.style.animation = "--animation-scale"
     visibleDearText.classList.add("active");
-    visibleDear.style.setProperty('--animate-duration', '1s')
   }
 
   // блок место
