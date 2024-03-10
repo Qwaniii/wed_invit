@@ -9,6 +9,7 @@
     justify-content: center;
     background-image: linear-gradient(to bottom, white, var(--color-primary));
     overflow: hidden;
+    transition: min-height .3s linear;
   }
 
 .start-view__container {
@@ -88,3 +89,11 @@
         width: 100%;
     }
 }
+
+/* safari ios 100vh */
+
+@supports (-webkit-touch-callout: none) {
+    .h-screen {
+      height: -webkit-fill-available;
+    }
+  }

@@ -39,10 +39,11 @@
 }
 
 #wedding-day::before {
-    content : '\1F496';
+    content : '\2661';
     font-family: 'Courier New', Courier, monospace;
-    font-size: 55px;
-    opacity: .5;
+    color: var(--color-primary);
+    font-size: 80px;
+    opacity: .6;
     position: absolute;
     /* text-align: center; */
     /* left: -25%;
