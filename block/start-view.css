@@ -83,6 +83,7 @@
 @media (max-width: 600px) {
     .start-view__container h1 {
         font-size: 18px;
+        min-height: 100vh;
         min-height: -webkit-fill-available;
         /* font-weight: bold; */
     }

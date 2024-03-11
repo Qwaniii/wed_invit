@@ -59,8 +59,8 @@ function updateScroll() {
   let dearTextOffset = visibleDearText.offsetTop;
   let windowBottomPosition = window.scrollY + window.innerHeight;
 
-  windowBottomPosition >= dearOffset ? visibleDear.style.animation = "var(--animation-scale) .3s forwards" : none;
-  windowBottomPosition >= dearTextOffset ? visibleDearText.style.animation = "var(--animation-block) 0.3s forwards" : none;
+  windowBottomPosition >= dearOffset ? visibleDear.style.animation = "var(--animation-scale) .3s forwards" : "none";
+  windowBottomPosition >= dearTextOffset ? visibleDearText.style.animation = "var(--animation-block) 0.3s forwards" : "none";
 
   // блок место
   let placeOffset = document.querySelector('#place').offsetTop;
