@@ -19,8 +19,8 @@
   --color-button:  #ffab6796;
   --color-button-hover:  #ffab67c9;
   --minimal-height-block: 600px;
-  --animation-block: fadeRightIn 1.5s ease-out;
-  --animation-scale: scaleFade 2s ease-out;
+  --animation-block: fadeRightIn 1s linear;
+  --animation-scale: scaleFade .7s linear;
 }
 
 
@@ -73,6 +73,11 @@ body {
       opacity: 0;
   }
 
+  87% {
+    transform: translateX(0.5%);
+    opacity: 0.9;
+  }
+
   100% {
       transform: translateX(0);
       opacity: 1;
@@ -86,9 +91,12 @@ body {
     opacity: 0;
   }
 
-  50% {
+  87% {
     transform: scale(1.03);
+    opacity: 0.93;
+
   }
+
 
   100% {
     transform: scale(1);

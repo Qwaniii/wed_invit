@@ -53,15 +53,14 @@ document.addEventListener("keydown", (e) => {
 function updateScroll() {
   
     // блок приветствия 
-  let greetingsOffset = document.querySelector('#greetings').offsetTop;
-  let windowBottomPosition = window.scrollY + window.innerHeight;
   let visibleDear = document.querySelector("#dear")
   let visibleDearText = document.querySelector("#dear-text")
+  let dearOffset = visibleDear.offsetTop;
+  let dearTextOffset = visibleDearText.offsetTop;
+  let windowBottomPosition = window.scrollY + window.innerHeight;
 
-  if (windowBottomPosition >= greetingsOffset) {
-    visibleDear.style.animation = "var(--animation-scale) .6s forwards";
-    visibleDearText.style.animation = "var(--animation-block) 1.5s forwards";
-  }
+  windowBottomPosition >= dearOffset ? visibleDear.style.animation = "var(--animation-scale) .3s forwards" : none;
+  windowBottomPosition >= dearTextOffset ? visibleDearText.style.animation = "var(--animation-block) 0.3s forwards" : none;
 
   // блок место
   let placeOffset = document.querySelector('#place').offsetTop;

@@ -39,16 +39,10 @@
 }
 
 #wedding-day::before {
-    content : '\1F497';
-    /* font-family: 'Courier New', Courier, monospace; */
-    /* color: var(--color-primary); */
-    filter:opacity(.25);
-    font-size: 60px;
-    /* opacity: .3; */
+    content : url(../img/heart1.png);
+    font-size: 10px;
+    opacity: .6;
     position: absolute;
-    /* text-align: center; */
-    /* left: -25%;
-    top: -20%; */
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     top: 50%;

@@ -2,6 +2,7 @@
 .start-view {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     min-height: calc(var(--vh, 1vh) * 100);
     display: flex;
     flex-direction: column;
@@ -9,7 +10,7 @@
     justify-content: center;
     background-image: linear-gradient(to bottom, white, var(--color-primary));
     overflow: hidden;
-    transition: min-height .3s linear;
+    transition: min-height .4s linear;
   }
 
 .start-view__container {
@@ -94,6 +95,6 @@
 
 @supports (-webkit-touch-callout: none) {
     .h-screen {
-      height: -webkit-fill-available;
+      min-height: -webkit-fill-available;
     }
   }
