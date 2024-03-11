@@ -4,8 +4,6 @@
     min-height: 100vh;
     /* min-height: 100svh;
     min-height: calc(var(--vh, 1vh) * 100); */
-    min-height: -webkit-fill-available;
-    height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,6 +83,7 @@
 @media (max-width: 600px) {
     .start-view__container h1 {
         font-size: 18px;
+        min-height: -webkit-fill-available;
         /* font-weight: bold; */
     }
 
@@ -95,8 +94,8 @@
 
 /* safari ios 100vh */
 
-@supports (-webkit-touch-callout: none) {
+/* @supports (-webkit-touch-callout: none) {
     .start-view {
       min-height: -webkit-fill-available;
     }
-  }
+  } */

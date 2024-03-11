@@ -21,5 +21,25 @@ function init(){
     if(isMobile.any()){
         myMap.behaviors.disable('scrollZoom');
         myMap.behaviors.disable('drag');
+    }
+
+    myPlacemarkWithContent = new ymaps.Placemark(myMap.getCenter(), {
+        hintContent: 'Место проведения',
+        balloonContent: 'Ресторан'
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: '../img/ring.png',
+        // Размеры метки.
+        iconImageSize: [50, 50],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-5, -38]
+    })
+
+    myMap.geoObjects
+        .add(myPlacemarkWithContent);
 }
-}
+
