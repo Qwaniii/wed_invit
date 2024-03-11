@@ -82,7 +82,6 @@ body {
       transform: translateX(0);
       opacity: 1;
   }
-  
 }
 
 @keyframes scaleFade {
@@ -101,5 +100,41 @@ body {
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeRightIn {
+  0% {
+    -webkit-transform: translateX(3%);
+    -webkit-opacity: 0;
+  }
+
+  87% {
+    -webkit-transform: translateX(0.5%);
+    -webkit-opacity: 0.9;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -webkit-opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleFade {
+  0% {
+    -webkit-transform: scale(.92);
+    -webkit-opacity: 0;
+  }
+
+  87% {
+    -webkit-transform: scale(1.03);
+    -webkit-opacity: 0.93;
+
+  }
+
+
+  100% {
+    -webkit-transform: scale(1);
+    -webkit-opacity: 1;
   }
 }
