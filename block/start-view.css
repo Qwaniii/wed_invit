@@ -5,6 +5,7 @@
     /* min-height: 100svh;
     min-height: calc(var(--vh, 1vh) * 100); */
     min-height: -webkit-fill-available;
+    height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     align-items: center;
