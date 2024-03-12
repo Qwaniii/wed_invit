@@ -60,23 +60,28 @@ function updateScroll() {
   let windowBottomPosition = window.scrollY + window.innerHeight;
 
   windowBottomPosition >= dearOffset ? visibleDear.style.animation = "var(--animation-scale) .3s forwards" : "none";
-  windowBottomPosition >= dearTextOffset ? visibleDearText.style.animation = "var(--animation-block) 0.3s forwards" : "none";
+  windowBottomPosition >= dearTextOffset ? visibleDearText.style.animation = "var(--animation-block) 0.5s forwards" : "none";
 
   // блок место
-  let placeOffset = document.querySelector('#place').offsetTop;
   let visibleMap = document.querySelector("#map")
   let mapOffset = visibleMap.offsetTop;
   let visiblePlace = document.querySelector(".place__main")
   let visiblePlaceText = document.querySelector(".place__text")
 
-  if (windowBottomPosition >= placeOffset) {
-    visiblePlace.style.animation = "var(--animation-scale) .6s forwards";
-    visiblePlaceText.style.animation = "var(--animation-block) 1.3s forwards";
-  }
+  windowBottomPosition >= visiblePlace.offsetTop ? visiblePlace.style.animation = "var(--animation-scale) .3s forwards" : "none";
+  windowBottomPosition >= visiblePlaceText.offsetTop ? visiblePlaceText.style.animation = "var(--animation-block) 0.4s forwards" : "none";
+  windowBottomPosition >= mapOffset ? visibleMap.style.animation = "var(--animation-block) .5s forwards" : "none";
 
-  if(windowBottomPosition >= mapOffset) {
-    visibleMap.style.animation = "var(--animation-block) 1.6s forwards";
-  }
+
+  // блок дата
+
+  let visibleDate = document.querySelector("#dateh1");
+  let visibleCalendar = document.querySelector("#calendar1");
+  let visibleAddToCalendar = document.querySelector("#add");
+
+  windowBottomPosition >= visibleDate.offsetTop ? visibleDate.style.animation = "var(--animation-scale) .3s forwards" : "none";
+  windowBottomPosition >= visibleCalendar.offsetTop ? visibleCalendar.style.animation = "var(--animation-block) 0.4s forwards" : "none";
+  windowBottomPosition >= visibleAddToCalendar.offsetTop ? visibleAddToCalendar.style.animation = "var(--animation-block) 0.5s forwards" : "none";
 
 }
  

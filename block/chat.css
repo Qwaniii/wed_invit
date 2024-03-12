@@ -1,0 +1,19 @@
+.chat {
+  min-height: var(--minimal-height-block);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
+}
+
+#chat-h1 {
+  font-size: var(--font-first);
+}
+
+#chat-text {
+  font-size: var(--font-text);
+  font-family: var(--font-family-other);
+}

@@ -5,6 +5,7 @@
 @import url(./block/start-view.css);
 @import url(./block/place.css);
 @import url(./block/date.css);
+@import url(./block/chat.css);
 
 
 :root {
@@ -131,7 +132,6 @@ body {
     -webkit-opacity: 0.93;
 
   }
-
 
   100% {
     -webkit-transform: scale(1);

@@ -9,8 +9,9 @@
 
 }
 
-#date h1 {
-    font-size: var(--font-first)
+#dateh1 {
+    font-size: var(--font-first);
+    opacity: 0;
 }
 
 #date p {
@@ -23,6 +24,7 @@
 #calendar1 {
     font-size: var(--font-text);
     text-align: center;
+    opacity: 0;
 }
 
 #calendar1 thead tr:first-child {
@@ -32,13 +34,13 @@
 }
 
 #wedding-day {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 91, 91);
     font-weight: bold;
     font-size: 25px;
     position: relative;
 
-    animation: heartBeat 2s infinite;
-    -webkit-animation: heartBeat 2s infinite;
+    animation: heartBeat 1.5s infinite;
+    -webkit-animation: heartBeat 1.5s infinite;
 }
 
 #wedding-day::before {
@@ -52,7 +54,9 @@
     z-index: -1;
 }
 
-
+#add {
+  opacity: 0;
+}
 
 .add-to>a>img {
     width: 30px;
