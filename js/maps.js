@@ -13,7 +13,7 @@ ymaps.ready(init);
 function init(){
     let myMap = new ymaps.Map("map", {
         center: [55.765802, 37.644561],
-        zoom: 17,
+        zoom: 15,
         controls: ['smallMapDefaultSet'],
         // behaviors: ["drag", "dblClickZoom", "rightMouseButtonMagnifier", "multiTouch"]  
     });
@@ -23,23 +23,34 @@ function init(){
         myMap.behaviors.disable('drag');
     }
 
-    myPlacemarkWithContent = new ymaps.Placemark(myMap.getCenter(), {
+    // myPlacemarkWithContent = new ymaps.Placemark([55.765802, 38.644561], {
+    //     hintContent: 'Место проведения',
+    //     balloonContent: 'Ресторан'
+    // }, {
+    //     // Опции.
+    //     // Необходимо указать данный тип макета.
+    //     iconLayout: 'default#imageWithContent',
+    //     // Своё изображение иконки метки.
+    //     iconImageHref: 'img/pin_maps.png',
+    //     // Размеры метки.
+    //     iconImageSize: [75, 75],
+    //     // Смещение левого верхнего угла иконки относительно
+    //     // её "ножки" (точки привязки).
+    //     iconImageOffset: [0, 0],
+    //     // Смещение слоя с содержимым относительно слоя с картинкой.
+    //     // iconContentOffset: [-30, 50],
+    // })
+
+    myPlacemark = new ymaps.Placemark([55.765802, 37.644561], {
         hintContent: 'Место проведения',
-        balloonContent: 'Ресторан'
+        balloonContent: 'Ресторан <strong>Лучший</strong>'
     }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'img/ring.png',
-        // Размеры метки.
-        iconImageSize: [50, 50],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [-5, -38]
+        preset: 'islands#orangeHeartIcon',
     })
 
     myMap.geoObjects
-        .add(myPlacemarkWithContent);
+        .add(myPlacemark);
+
+    // myPlacemark.balloon.open()
 }
 

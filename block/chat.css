@@ -11,9 +11,12 @@
 
 #chat-h1 {
   font-size: var(--font-first);
+  opacity: 0;
 }
 
 #chat-text {
   font-size: var(--font-text);
   font-family: var(--font-family-other);
+  opacity: 0;
 }
+

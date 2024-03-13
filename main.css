@@ -6,6 +6,7 @@
 @import url(./block/place.css);
 @import url(./block/date.css);
 @import url(./block/chat.css);
+@import url(./block/quiz.css);
 
 
 :root {
@@ -21,7 +22,7 @@
   --color-button-hover:  #ffab67c9;
   --minimal-height-block: 600px;
   --animation-block: fadeRightIn 1s linear;
-  --animation-scale: scaleFade .7s linear;
+  --animation-scale: scaleFade 1.2s ease-out;
 }
 
 
@@ -56,10 +57,55 @@ body {
     overflow-x: hidden
 }
 
+a {
+  text-decoration: none;
+  color: initial;
+}
+
 .container-main {
   width: 100%;
   max-width: 850px;
   margin: 0 auto;
+}
+
+.btn {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: var(--color-button);
+  border: .3px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: var(--font-text);
+  transition: all .5s;
+  box-sizing: border-box;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.btn-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-85px);
+  /* filter: blur(10) brightness(3); */
+  animation: buttonColor 2.5s ease-out infinite forwards;
+}
+
+.btn-effect {
+  background: linear-gradient(90deg, rgba(255, 155, 72, 0.01), rgba(255, 219, 172, 0.3));
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -30px;
+  transform: skewX(-45deg);
+}
+
+.btn:hover {
+  background-color: var(--color-button-hover);
+  border: .1px solid transparent;
 }
 
   /* animation settings */
@@ -91,8 +137,8 @@ body {
     opacity: 0;
   }
 
-  87% {
-    transform: scale(1.03);
+  60% {
+    transform: scale(1.05);
     opacity: 0.93;
 
   }
@@ -102,6 +148,18 @@ body {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+@keyframes buttonColor {
+  50% {
+    transform:translateX(-100%);
+
+  }
+
+  100% {
+    transform:translateX(150%);
+  }
+
 }
 
 @-webkit-keyframes fadeRightIn {
@@ -127,8 +185,8 @@ body {
     -webkit-opacity: 0;
   }
 
-  87% {
-    -webkit-transform: scale(1.03);
+  60% {
+    -webkit-transform: scale(1.05);
     -webkit-opacity: 0.93;
 
   }
@@ -137,4 +195,16 @@ body {
     -webkit-transform: scale(1);
     -webkit-opacity: 1;
   }
+}
+
+@-webkit-keyframes buttonColor {
+  50% {
+    -webkit-transform:translateX(-100%);
+
+  }
+
+  100% {
+    -webkit-transform:translateX(150%);
+  }
+
 }

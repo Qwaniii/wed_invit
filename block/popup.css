@@ -43,7 +43,6 @@
     display: none;
     justify-content: center;
   }
-
   
 
   /* .popup:first-child {
@@ -58,7 +57,7 @@
     width: 30px;
     height: 30px;
     border-radius: 6px;
-    background: #5282FF;
+    background: var(--color-primary);
     position: absolute;
     right: 10px;
     top: 10px;

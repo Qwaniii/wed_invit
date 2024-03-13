@@ -37,8 +37,8 @@
             </div>
         </div>
     </section>
+
     <div class="container-main">
-      
           <!-- дорогие родные -->
           <section class="greetings" id="greetings">
             <!-- <div class="family-img"></div> -->
@@ -98,20 +98,47 @@
               <h1 id="chat-h1">Общий чат</h1>
               <p id="chat-text">Для вашего удобства мы создали чат в Telegram, куда можно будет добавлять фото со свадьбы. Давайте поделимся друг с другом счастливыми моментами этого важного дня и будем на связи!</p>
             </div>
-            <button>Вступить</button>
+            <button class="btn" id="btn-telegram"><a target="_blank" href="https://t.me/+ZSwVwGIfAXI5OGZi">Вступить</a>
+              <div class="btn-wrap">
+                <div class="btn-effect">
+                </div>
+              </div>
+            </button>
           </section>
+        </div>
           <section class="quiz">
             <div class="quiz-text">
-              <h3>Подтвердите присутствие</h3>
-              <button class="done">Я приду</button>
+              <h1 id="quiz-h1">До встречи в июле!</h1>
+              <p id="quiz-p">Просим вас подтвердить свое присутствие</p>
+              <div class="btn-main-wrapper">
+                <button class="done btn"><span>Я приду</span>
+                  <div class="btn-wrap">
+                    <div class="btn-effect">
+                    </div>
+                  </div>
+                </button>
+                <button class="family btn">Буду с парой/семьёй
+                  <div class="btn-wrap">
+                    <div class="btn-effect">
+                    </div>
+                  </div>
+                </button>
+                <button class="btn-not">Не смогу прийти
+                </button>
+              </div>
             </div>
           </section>
-    </div>
     
     <!-- модальное окно с опросом  -->
     <div class="popup__wrapper">
       <div class="popup" id="popup-form">
         <iframe src="https://forms.yandex.ru/u/65dc6d6243f74f03b963527d/?iframe=1" frameborder="0" name="ya-form-65dc6d6243f74f03b963527d" width="350"></iframe>
+        <div class="popup-close">
+          <span></span>
+        </div>
+      </div>
+      <div class="popup" id="popup-form2">
+        <iframe src="https://forms.yandex.ru/u/65f1d26202848f45431a824a/?iframe=1" frameborder="0" name="ya-form-65f1d26202848f45431a824a" width="350"></iframe>
         <div class="popup-close">
           <span></span>
         </div>

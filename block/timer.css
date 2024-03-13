@@ -9,7 +9,7 @@
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     margin-top: auto;
-    box-sizing: border-box;
+    box-sizing: border-box;    
     /* position: absolute;
     bottom: 0;
     left: 50%;
@@ -24,6 +24,8 @@
     min-width: 600px;
     height: 132px;
     grid-row-gap: 0;
+    opacity: 0;
+    animation: timerOpacity .7s ease-out 1s forwards;
   }
   
   .timer-inner {
@@ -45,6 +47,31 @@
   
   #days, #hours, #minutes, #seconds {
     font-size: 50px;
+  }
+
+  @keyframes timerOpacity {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @-webkit-keyframes timerOpacity {
+    0% {
+      -webkit-opacity: 0;
+      -webkit-transform: translateY(100%);
+    }
+
+    100% {
+      -webkit-opacity: 1;
+      -webkit-transform: translateY(0);
+    }
+    
   }
 
   

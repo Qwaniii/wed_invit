@@ -1,0 +1,54 @@
+.quiz {
+    min-height: var(--minimal-height-block);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-primary);
+}
+
+#quiz-h1 {
+    font-size: var(--font-first);
+    position: relative;
+    opacity: 0;
+}
+
+#quiz-h1::after {
+    content: "До встречи в июле";
+    position: absolute;
+    top: -32px; 
+    left: 0;
+    width: 100%;
+    font-size: 55px;
+    opacity: .17;
+    /* filter: brightness(1.2); */
+    color: gray;
+    font-weight: bold;
+}
+
+#quiz-p {
+    font-size: var(--font-text);
+    font-family: var(--font-family-other);
+    opacity: 0;
+}
+
+.btn-not {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: .3px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    font-size: var(--font-text);
+    transition: all .5s;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.btn-not:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    border: .1px solid transparent;
+  }
