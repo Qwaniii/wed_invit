@@ -89,3 +89,12 @@
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
+
+  @media (max-width: 600px) {
+    .popup {
+      width: 100%;
+      max-height: none;
+      height: 100%;
+      /* overflow-y: hidden; */
+    }
+  }

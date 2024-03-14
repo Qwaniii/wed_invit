@@ -52,3 +52,28 @@
     background-color: rgba(128, 128, 128, 0.1);
     border: .1px solid transparent;
   }
+
+.btn-main-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+@media (max-width: 610px) {
+    #quiz-h1::after {
+        font-size: 40px;
+    }
+
+    .btn-main-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 300px) {
+
+    #quiz-h1,
+    #quiz-h1::after {
+        font-size: 30px;
+    }
+}

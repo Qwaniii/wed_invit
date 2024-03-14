@@ -32,19 +32,9 @@
     -o-filter: grayscale(1); */
 }
 
-
-
-
-/* .place__button {
-    background-color: rgb(255, 155, 88);
-    border-radius: 20px;
-    padding: 10px 20px;
+@media (max-width: 849px) {
+    .place__main, 
+    .place__text {
+        padding: 0 20px;
+    }
 }
-
-
-.place__button-link {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-
-} */

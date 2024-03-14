@@ -127,3 +127,9 @@
     }
   }
 
+
+  @media (max-width: 849px) {
+    #dateh1 {
+        padding: 0 20px;
+    }
+}

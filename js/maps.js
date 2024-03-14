@@ -15,8 +15,11 @@ function init(){
         center: [55.765802, 37.644561],
         zoom: 15,
         controls: ['smallMapDefaultSet'],
-        // behaviors: ["drag", "dblClickZoom", "rightMouseButtonMagnifier", "multiTouch"]  
+        type: null,
+        // behaviors: ["drag", "dblClickZoom", "multiTouch"]  
     });
+
+
 
     if(isMobile.any()){
         myMap.behaviors.disable('scrollZoom');
@@ -63,6 +66,8 @@ function init(){
             .add('mouseleave', function (e){
                 e.get('target').options.set({preset: 'islands#orangeHeartIcon'});
             });
+
+
 
     // myPlacemark.balloon.open()
 }
