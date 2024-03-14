@@ -11,9 +11,11 @@
 
 const popup = document.querySelector("#popup-form")
 const popup2 = document.querySelector("#popup-form2")
+const popup3 = document.querySelector("#popup-form3")
 const popupWrapper = document.querySelector(".popup__wrapper")
 const btn = document.querySelector(".done")
 const btnFamily = document.querySelector(".family")
+const btnNot = document.querySelector(".btn-not")
 const closePopup = document.querySelectorAll(".popup-close")
 
 btn.addEventListener("click", (e) => {
@@ -31,6 +33,15 @@ btnFamily.addEventListener("click", (e) => {
     popup2.parentElement.classList.add("active")
   }
 });
+
+btnNot.addEventListener("click", (e) => {
+  e.preventDefault();
+  if(!popup3.classList.contains("active")) {
+    popup3.classList.add("active");
+    popup3.parentElement.classList.add("active")
+  }
+});
+
 closePopup.forEach(close => {
   close.addEventListener("click", (e) => {
     e.preventDefault();
@@ -41,6 +52,10 @@ closePopup.forEach(close => {
     if (popup2.classList.contains("active")){
       popup2.classList.toggle("active");
       popup2.parentElement.classList.toggle("active")
+    };
+    if (popup3.classList.contains("active")){
+      popup3.classList.toggle("active");
+      popup3.parentElement.classList.toggle("active")
     };
   })
 })
@@ -56,6 +71,11 @@ popupWrapper.addEventListener("click", function(e) {
     popup2.parentElement.classList.toggle("active");
   }
 
+  if (e.target.classList.contains("popup__wrapper") && popup3.classList.contains("active")) {
+    popup3.classList.toggle("active");
+    popup3.parentElement.classList.toggle("active");
+  }
+
 })
 
 document.addEventListener("keydown", (e) => {
@@ -67,6 +87,11 @@ document.addEventListener("keydown", (e) => {
   if(e.code == "Escape" && popup2.classList.contains('active')) {
     popup2.classList.toggle("active");
     popup2.parentElement.classList.toggle("active");
+  }
+
+  if(e.code == "Escape" && popup3.classList.contains('active')) {
+    popup3.classList.toggle("active");
+    popup3.parentElement.classList.toggle("active");
   }
 })
 

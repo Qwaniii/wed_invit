@@ -49,7 +49,20 @@ function init(){
     })
 
     myMap.geoObjects
-        .add(myPlacemark);
+        .add(myPlacemark)
+
+    myMap.layers.add(new ymaps.Layer('http://tile.openstreetmap.org/%z/%x/%y.png', {
+        projection: ymaps.projection.sphericalMercator,
+    }));
+    myMap.copyrights.add('© OpenStreetMap contributors, CC-BY-SA');
+
+    myPlacemark.events
+            .add('mouseenter', function (e){
+                e.get('target').options.set({preset: 'islands#redHeartIcon'});
+            })
+            .add('mouseleave', function (e){
+                e.get('target').options.set({preset: 'islands#orangeHeartIcon'});
+            });
 
     // myPlacemark.balloon.open()
 }
