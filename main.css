@@ -57,6 +57,10 @@ body {
     overflow-x: hidden
 }
 
+body.popup-active {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   color: initial;

@@ -10,35 +10,29 @@
 
 
 const popup = document.querySelector("#popup-form")
-const popup2 = document.querySelector("#popup-form2")
 const popup3 = document.querySelector("#popup-form3")
 const popupWrapper = document.querySelector(".popup__wrapper")
 const btn = document.querySelector(".done")
-const btnFamily = document.querySelector(".family")
 const btnNot = document.querySelector(".btn-not")
 const closePopup = document.querySelectorAll(".popup-close")
+const body = document.body
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
   if(!popup.classList.contains("active")) {
     popup.classList.add("active");
     popup.parentElement.classList.add("active")
+    body.classList.add("popup-active")
   }
 });
 
-btnFamily.addEventListener("click", (e) => {
-  e.preventDefault();
-  if(!popup2.classList.contains("active")) {
-    popup2.classList.add("active");
-    popup2.parentElement.classList.add("active")
-  }
-});
 
 btnNot.addEventListener("click", (e) => {
   e.preventDefault();
   if(!popup3.classList.contains("active")) {
     popup3.classList.add("active");
     popup3.parentElement.classList.add("active")
+    body.classList.add("popup-active")
   }
 });
 
@@ -48,14 +42,12 @@ closePopup.forEach(close => {
     if (popup.classList.contains("active")){
       popup.classList.toggle("active");
       popup.parentElement.classList.toggle("active")
-    };
-    if (popup2.classList.contains("active")){
-      popup2.classList.toggle("active");
-      popup2.parentElement.classList.toggle("active")
+      body.classList.remove("popup-active")
     };
     if (popup3.classList.contains("active")){
       popup3.classList.toggle("active");
       popup3.parentElement.classList.toggle("active")
+      body.classList.remove("popup-active")
     };
   })
 })
@@ -64,16 +56,15 @@ popupWrapper.addEventListener("click", function(e) {
   if (e.target.classList.contains("popup__wrapper") && popup.classList.contains("active")) {
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active");
-  }
+    body.classList.remove("popup-active")
 
-  if (e.target.classList.contains("popup__wrapper") && popup2.classList.contains("active")) {
-    popup2.classList.toggle("active");
-    popup2.parentElement.classList.toggle("active");
   }
 
   if (e.target.classList.contains("popup__wrapper") && popup3.classList.contains("active")) {
     popup3.classList.toggle("active");
     popup3.parentElement.classList.toggle("active");
+    body.classList.remove("popup-active")
+
   }
 
 })
@@ -82,16 +73,16 @@ document.addEventListener("keydown", (e) => {
   if(e.code == "Escape" && popup.classList.contains('active')) {
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active");
+    body.classList.remove("popup-active")
+
   }
 
-  if(e.code == "Escape" && popup2.classList.contains('active')) {
-    popup2.classList.toggle("active");
-    popup2.parentElement.classList.toggle("active");
-  }
 
   if(e.code == "Escape" && popup3.classList.contains('active')) {
     popup3.classList.toggle("active");
     popup3.parentElement.classList.toggle("active");
+    body.classList.remove("popup-active")
+
   }
 })
 
@@ -152,14 +143,12 @@ function updateScroll() {
   let visibleQuizFirst = document.querySelector("#quiz-h1")
   let visibleQuizSecond = document.querySelector("#quiz-p")
   let visibleQuizBtnDone = document.querySelector(".done")
-  let visibleQuizBtnFamily = document.querySelector(".family")
   let visibleQuizBtnNot = document.querySelector(".btn-not")
 
 
   windowBottomPosition >= visibleQuizFirst.offsetTop ? visibleQuizFirst.style.animation = "var(--animation-scale) .3s forwards" : "none";
   windowBottomPosition >= visibleQuizSecond.offsetTop ? visibleQuizSecond.style.animation = "var(--animation-block) 0.4s forwards" : "none";
   windowBottomPosition >= visibleQuizBtnDone.offsetTop ? visibleQuizBtnDone.style.animation = "var(--animation-scale) .4s forwards" : "none";
-  windowBottomPosition >= visibleQuizBtnFamily.offsetTop ? visibleQuizBtnFamily.style.animation = "var(--animation-scale) .6s forwards" : "none";
   windowBottomPosition >= visibleQuizBtnNot.offsetTop ? visibleQuizBtnNot.style.animation = "var(--animation-scale) .8s forwards" : "none";
 
 
