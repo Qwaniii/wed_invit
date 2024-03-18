@@ -32,6 +32,10 @@
     -o-filter: grayscale(1); */
 }
 
+.ymaps-2-1-79-ground-pane {
+    filter:grayscale(1);
+}
+
 @media (max-width: 849px) {
     .place__main, 
     .place__text {

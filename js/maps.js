@@ -15,7 +15,7 @@ function init(){
         center: [55.765802, 37.644561],
         zoom: 15,
         controls: ['smallMapDefaultSet'],
-        type: null,
+        // type: null,
         // behaviors: ["drag", "dblClickZoom", "multiTouch"]  
     });
 
@@ -54,18 +54,28 @@ function init(){
     myMap.geoObjects
         .add(myPlacemark)
 
-    myMap.layers.add(new ymaps.Layer('http://tile.openstreetmap.org/%z/%x/%y.png', {
-        projection: ymaps.projection.sphericalMercator,
-    }));
-    myMap.copyrights.add('© OpenStreetMap contributors, CC-BY-SA');
-
     myPlacemark.events
-            .add('mouseenter', function (e){
-                e.get('target').options.set({preset: 'islands#redHeartIcon'});
-            })
-            .add('mouseleave', function (e){
-                e.get('target').options.set({preset: 'islands#orangeHeartIcon'});
-            });
+        .add('mouseenter', function (e){
+            e.get('target').options.set({preset: 'islands#redHeartIcon'});
+        })
+        .add('mouseleave', function (e){
+            e.get('target').options.set({preset: 'islands#orangeHeartIcon'});
+        });
+
+    // myMap.layers.add(new ymaps.Layer('http://tile.openstreetmap.org/%z/%x/%y.png', {
+    //     projection: ymaps.projection.sphericalMercator,
+    // }));
+
+    // myMap.copyrights.add('© OpenStreetMap contributors, CC-BY-SA');
+
+    // myMap.events.add("mousemove", function(e) {
+    //     myMap.hint.show(e.get('coordPosition'), 'Кто-то щелкнул правой кнопкой');
+    // })
+    myMap.events.add('multitouchmove', function (e) {
+        console.log(e.get('type'))
+    });
+
+
 
 
 
