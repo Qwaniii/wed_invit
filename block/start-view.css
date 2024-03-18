@@ -14,7 +14,7 @@
     content-box radial-gradient(var(--color-primary), rgba(250, 200, 208, 0.375));
     overflow: hidden;
     transition: min-height .4s linear;
-    backdrop-filter: brightness(70%);
+    /* backdrop-filter: brightness(70%); */
   }
 
 .start-view__container {

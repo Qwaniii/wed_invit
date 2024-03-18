@@ -33,7 +33,7 @@
 }
 
 #wedding-day {
-    color: rgb(255, 91, 91);
+    color: var(--color-text-hover);
     font-weight: bold;
     font-size: 25px;
     position: relative;
