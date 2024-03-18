@@ -9,11 +9,12 @@
     align-items: center;
     justify-content: center;
     /* background-image: linear-gradient(to bottom, white, var(--color-primary)); */
-    background: center / contain no-repeat url(../img//background_2.png),
+    background: center / 60% no-repeat url(../img//background_2.png),
     /* linear-gradient(to right, white, var(--color-primary)); */
     content-box radial-gradient(var(--color-primary), rgba(250, 200, 208, 0.375));
     overflow: hidden;
     transition: min-height .4s linear;
+    backdrop-filter: brightness(70%);
   }
 
 .start-view__container {
@@ -43,6 +44,7 @@
     height: 205px;
     padding: 0 20px;
     box-sizing: border-box;
+    filter: brightness(.85);
     animation: var(--animation-block);
     animation-duration: 2s;
 
