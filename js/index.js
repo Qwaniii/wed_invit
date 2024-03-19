@@ -23,7 +23,7 @@ btn.addEventListener("click", (e) => {
     popup.classList.add("active");
     popup.parentElement.classList.add("active")
     body.classList.add("popup-active")
-    window.history.pushState(null, null, 'modal.html')
+    window.history.pushState(null, null, '')
   }
 });
 
@@ -53,6 +53,17 @@ closePopup.forEach(close => {
     };
   })
 })
+
+window.addEventListener("popstate", (event) => {
+  console.log(
+    `location: ${document.location}, state: ${JSON.stringify(event.state)}`,
+  );
+});
+
+document.addEventListener("backbutton", () => {
+  window.history.back()
+});
+
 
 popupWrapper.addEventListener("click", function(e) {
   if (e.target.classList.contains("popup__wrapper") && popup.classList.contains("active")) {

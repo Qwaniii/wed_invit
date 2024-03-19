@@ -19,12 +19,17 @@ function init(){
         // behaviors: ["drag", "dblClickZoom", "multiTouch"]  
     });
 
+    myMap.controls
+        .remove('fullscreenControl')
+        .remove('typeSelector');
+
 
 
     if(isMobile.any()){
         myMap.behaviors.disable('scrollZoom');
         myMap.behaviors.disable('drag');
     }
+
 
     // myPlacemarkWithContent = new ymaps.Placemark([55.765802, 38.644561], {
     //     hintContent: 'Место проведения',
