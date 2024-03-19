@@ -34,6 +34,8 @@ btnNot.addEventListener("click", (e) => {
     popup3.classList.add("active");
     popup3.parentElement.classList.add("active")
     body.classList.add("popup-active")
+    window.history.pushState(null, null, '')
+
   }
 });
 
@@ -50,6 +52,8 @@ closePopup.forEach(close => {
       popup3.classList.toggle("active");
       popup3.parentElement.classList.toggle("active")
       body.classList.remove("popup-active")
+      window.history.back()
+
     };
   })
 })
@@ -62,6 +66,19 @@ window.addEventListener("popstate", (event) => {
 
 document.addEventListener("backbutton", () => {
   window.history.back()
+  if(popup.classList.contains('active')) {
+    popup.classList.toggle("active");
+    popup.parentElement.classList.toggle("active");
+    body.classList.remove("popup-active")
+
+  }
+
+  if(popup3.classList.contains('active')) {
+    popup3.classList.toggle("active");
+    popup3.parentElement.classList.toggle("active");
+    body.classList.remove("popup-active")
+
+  }
 });
 
 
