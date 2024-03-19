@@ -23,6 +23,7 @@ btn.addEventListener("click", (e) => {
     popup.classList.add("active");
     popup.parentElement.classList.add("active")
     body.classList.add("popup-active")
+    window.history.pushState(null, null, 'modal.html')
   }
 });
 
@@ -43,6 +44,7 @@ closePopup.forEach(close => {
       popup.classList.toggle("active");
       popup.parentElement.classList.toggle("active")
       body.classList.remove("popup-active")
+      window.history.back()
     };
     if (popup3.classList.contains("active")){
       popup3.classList.toggle("active");
@@ -86,9 +88,6 @@ document.addEventListener("keydown", (e) => {
   }
 })
 
-document.addEventListener('popstate', (e) => {
-  alert('button back is done')
-}, false);
 
 
 
