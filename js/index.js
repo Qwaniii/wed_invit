@@ -59,27 +59,22 @@ closePopup.forEach(close => {
 })
 
 window.addEventListener("popstate", (event) => {
-  console.log(
-    `location: ${document.location}, state: ${JSON.stringify(event.state)}`,
-  );
-});
+  // console.log(
+  //   `location: ${document.location}, state: ${JSON.stringify(event.state)}`,
+  // );
+  event.preventDefault();
 
-document.addEventListener("backbutton", () => {
-  window.history.back()
-  if(popup.classList.contains('active')) {
+  if (popup.classList.contains("active")){
     popup.classList.toggle("active");
-    popup.parentElement.classList.toggle("active");
+    popup.parentElement.classList.toggle("active")
     body.classList.remove("popup-active")
-
-  }
-
-  if(popup3.classList.contains('active')) {
-    popup3.classList.toggle("active");
-    popup3.parentElement.classList.toggle("active");
-    body.classList.remove("popup-active")
-
+    window.history.back()
   }
 });
+
+window.addEventListener("hashchange", function(e) {
+  alarm("done")
+})
 
 
 popupWrapper.addEventListener("click", function(e) {
