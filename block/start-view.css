@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     /* background-image: linear-gradient(to bottom, white, var(--color-primary)); */
-    background: center / 60% no-repeat url(../img//background_2.png),
+    background: center / 60% no-repeat url(../img//background_4.png),
     /* linear-gradient(to right, white, var(--color-primary)); */
     content-box radial-gradient(var(--color-primary), rgba(250, 200, 208, 0.375));
     overflow: hidden;
@@ -134,7 +134,7 @@
 
 @media (max-width: 600px) {
     .start-view {
-        background: center / 100% no-repeat url(../img//background_2.png),
+        background: center / 100% no-repeat url(../img//background_4.png),
         content-box radial-gradient(var(--color-primary), rgba(250, 200, 208, 0.375));
     }
 

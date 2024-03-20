@@ -30,6 +30,8 @@ function init(){
         myMap.behaviors.disable('drag');
     }
 
+    
+
 
     // myPlacemarkWithContent = new ymaps.Placemark([55.765802, 38.644561], {
     //     hintContent: 'Место проведения',
@@ -67,6 +69,8 @@ function init(){
             e.get('target').options.set({preset: 'islands#orangeHeartIcon'});
         });
 
+
+
     // myMap.layers.add(new ymaps.Layer('http://tile.openstreetmap.org/%z/%x/%y.png', {
     //     projection: ymaps.projection.sphericalMercator,
     // }));
@@ -79,6 +83,8 @@ function init(){
     myMap.events.add('multitouchmove', function (e) {
         console.log(e.get('type'))
     });
+
+    
 
 
 
