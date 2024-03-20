@@ -34,7 +34,7 @@ btnNot.addEventListener("click", (e) => {
     popup3.classList.add("active");
     popup3.parentElement.classList.add("active")
     body.classList.add("popup-active")
-    window.history.pushState(null, null, '')
+    window.history.pushState(null, null, 'ind.html')
 
   }
 });
@@ -68,8 +68,13 @@ window.addEventListener("popstate", (event) => {
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active")
     body.classList.remove("popup-active")
-    window.history.back()
   }
+  if (popup3.classList.contains("active")){
+    popup3.classList.toggle("active");
+    popup3.parentElement.classList.toggle("active")
+    body.classList.remove("popup-active")
+
+  };
 });
 
 window.addEventListener("hashchange", function(e) {
