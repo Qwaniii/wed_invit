@@ -25,16 +25,31 @@
 
 #map {
     opacity: 0;
-    /* filter: grayscale(1);
-    -ms-filter: grayscale(1);
-    -webkit-filter: grayscale(1);
-    -moz-filter: grayscale(1);
-    -o-filter: grayscale(1); */
+    position: relative;
+}
+.map-move {
+    /* filter:contrast(0.3); */
+    background-color: black;
+    transition: all .3s;
 }
 
 .ymaps-2-1-79-ground-pane {
     filter:grayscale(1);
 }
+
+.map-text {
+    display: none;
+    position: absolute;
+    font-size: 35px;
+    color: white;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0; 
+    right: 0;
+    z-index: 1;
+}
+
+
 
 @media (max-width: 849px) {
     .place__main, 

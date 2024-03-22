@@ -9,6 +9,8 @@ let isMobile = {
     }
 };
 
+mapLayer = document.querySelector("#map")
+
 ymaps.ready(init);
 function init(){
     let myMap = new ymaps.Map("map", {
@@ -61,6 +63,8 @@ function init(){
     myMap.geoObjects
         .add(myPlacemark)
 
+
+
     myPlacemark.events
         .add('mouseenter', function (e){
             e.get('target').options.set({preset: 'islands#redHeartIcon'});
@@ -69,6 +73,43 @@ function init(){
             e.get('target').options.set({preset: 'islands#orangeHeartIcon'});
         });
 
+
+        // $('<div><input type="button" value="Click!"/></div>')
+        // .css({ position: 'absolute', left: '5px', top: '50px'})
+        // .appendTo(map.panes.get('controls').getElement());
+    let selectedPane = new ymaps.pane.MovablePane(myMap, { zIndex: 420})
+    myMap.panes.append('myLayer', selectedPane)
+
+    myRectangle = new ymaps.Rectangle([[0, 0],[70, 179]], {}, {
+        fillColor: '#000000',
+        fillOpacity: .8,
+        pane: 'myLayer'
+    });
+
+    myMap.events
+        .add('mousemove', (e) => {
+            myMap.geoObjects.add(myRectangle)
+        })
+        .add('mouseleave', (e) => {
+            myMap.geoObjects.remove(myRectangle)
+        })
+
+
+
+
+
+    // let control = myMap.controls.get('routeButtonControl');
+
+    // control.routePanel.state.set({
+    //             // Зададим адрес пункта назначения.
+    //             to: 'Ресторан Эрми',
+    //             // Отключим возможность задавать пункт отправления в поле ввода.
+    //             toEnabled: false
+    // })
+
+    // Зададим координаты пункта отправления с помощью геолокации.
+    // control.routePanel.geolocate('from');
+    // control.state.set('expanded', true);
 
 
     // myMap.layers.add(new ymaps.Layer('http://tile.openstreetmap.org/%z/%x/%y.png', {

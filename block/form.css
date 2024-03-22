@@ -1,0 +1,11 @@
+.first-form {
+
+
+}
+
+.first-form__text {
+    /* max-width: 300px; */
+    padding: 0 30px;
+    box-sizing: border-box;
+    text-align: center;
+}

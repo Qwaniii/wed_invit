@@ -14,7 +14,7 @@ const popup3 = document.querySelector("#popup-form3")
 const popupWrapper = document.querySelector(".popup__wrapper")
 const btn = document.querySelector(".done")
 const btnNot = document.querySelector(".btn-not")
-const closePopup = document.querySelectorAll(".popup-close")
+const closePopup = document.querySelector(".popup-close")
 const body = document.body
 
 btn.addEventListener("click", (e) => {
@@ -34,29 +34,29 @@ btnNot.addEventListener("click", (e) => {
     popup3.classList.add("active");
     popup3.parentElement.classList.add("active")
     body.classList.add("popup-active")
-    window.history.pushState(null, null, 'ind.html')
+    window.history.pushState(null, null, '')
 
   }
 });
 
-closePopup.forEach(close => {
-  close.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (popup.classList.contains("active")){
-      popup.classList.toggle("active");
-      popup.parentElement.classList.toggle("active")
-      body.classList.remove("popup-active")
-      window.history.back()
-    };
-    if (popup3.classList.contains("active")){
-      popup3.classList.toggle("active");
-      popup3.parentElement.classList.toggle("active")
-      body.classList.remove("popup-active")
-      window.history.back()
+closePopup.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (popup.classList.contains("active")){
+    popup.classList.toggle("active");
+    popup.parentElement.classList.toggle("active")
+    body.classList.remove("popup-active")
+    window.history.back()
+  };
+  if (popup3.classList.contains("active")){
+    popup3.classList.toggle("active");
+    popup3.parentElement.classList.toggle("active")
+    body.classList.remove("popup-active")
+    window.history.back()
 
-    };
-  })
+  };
 })
+// closePopup.forEach(close => {
+// })
 
 window.addEventListener("popstate", (event) => {
   // console.log(
@@ -77,9 +77,6 @@ window.addEventListener("popstate", (event) => {
   };
 });
 
-window.addEventListener("hashchange", function(e) {
-  alarm("done")
-})
 
 
 popupWrapper.addEventListener("click", function(e) {
