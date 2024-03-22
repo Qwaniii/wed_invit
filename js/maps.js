@@ -77,25 +77,68 @@ function init(){
         // $('<div><input type="button" value="Click!"/></div>')
         // .css({ position: 'absolute', left: '5px', top: '50px'})
         // .appendTo(map.panes.get('controls').getElement());
-    let selectedPane = new ymaps.pane.MovablePane(myMap, { zIndex: 420})
-    myMap.panes.append('myLayer', selectedPane)
-
-    myRectangle = new ymaps.Rectangle([[0, 0],[70, 179]], {}, {
-        fillColor: '#000000',
-        fillOpacity: .8,
-        pane: 'myLayer'
-    });
-
-    myMap.events
-        .add('mousemove', (e) => {
-            myMap.geoObjects.add(myRectangle)
-        })
-        .add('mouseleave', (e) => {
-            myMap.geoObjects.remove(myRectangle)
-        })
 
 
+        
+    // let selectedPane = new ymaps.pane.MovablePane(myMap, { zIndex: 420})
+    // myMap.panes.append('myLayer', selectedPane)
 
+    // myRectangle = new ymaps.Rectangle([[0, 0],[70, 179]], {}, {
+    //     fillColor: '#000000',
+    //     fillOpacity: .8,
+    //     pane: 'myLayer'
+    // });
+
+    // myMap.events
+    //     .add('mousemove', (e) => {
+    //         myMap.geoObjects.add(myRectangle)
+    //     })
+    //     .add('mouseleave', (e) => {
+    //         myMap.geoObjects.remove(myRectangle)
+    //     })
+
+        // ------------
+
+        let eventsPaneEl = myMap.panes.get("events").getElement(), mobilePanelText = {
+            EN: "Use two fingers to move the map",
+            RU: "Чтобы переместить карту проведите по ней двумя пальцами"
+        }
+
+        window.isDragMap = !window.isMobile;
+
+        let
+         mobilePanelStyles = {
+            alignItems: "center",
+            boxSizing: "border-box",
+            color: "white",
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "20px",
+            fontFamily: "Arial,sans-serif",
+            opacity: "0.0",
+            padding: "25px",
+            textAlign: "center",
+            transition: "opacity .3s",
+            touchAction: "auto"
+        };
+        Array.prototype.forEach.call(Object.keys(mobilePanelStyles), (function(name) {
+            eventsPaneEl.style[name] = mobilePanelStyles[name]
+        }
+        )),
+
+        ymaps.domEvent.manager.add(eventsPaneEl, "touchmove", (function(event) {
+            console.log(event)
+            1 === event.get("touches").length && (eventsPaneEl.style.transition = "opacity .3s",
+            eventsPaneEl.style.background = "rgba(0, 0, 0, .45)",
+            eventsPaneEl.textContent = mobilePanelText[window.browserLang] || mobilePanelText.EN,
+            eventsPaneEl.style.opacity = "1")
+        }
+        )),
+        ymaps.domEvent.manager.add(eventsPaneEl, "touchend", (function() {
+            eventsPaneEl.style.transition = "opacity .8s",
+            eventsPaneEl.style.opacity = "0"
+        }
+        ));
 
 
     // let control = myMap.controls.get('routeButtonControl');
