@@ -100,11 +100,11 @@ function init(){
         // ------------
 
         let eventsPaneEl = myMap.panes.get("events").getElement(), mobilePanelText = {
-            EN: "Use two fingers to move the map",
             RU: "Чтобы переместить карту проведите по ней двумя пальцами"
         }
 
-        window.isDragMap = !window.isMobile;
+        // window.isDragMap = isMobile;
+
 
         let
          mobilePanelStyles = {
@@ -130,7 +130,7 @@ function init(){
             console.log(event)
             1 === event.get("touches").length && (eventsPaneEl.style.transition = "opacity .3s",
             eventsPaneEl.style.background = "rgba(0, 0, 0, .45)",
-            eventsPaneEl.textContent = mobilePanelText[window.browserLang] || mobilePanelText.EN,
+            eventsPaneEl.textContent = mobilePanelText.RU,
             eventsPaneEl.style.opacity = "1")
         }
         )),
