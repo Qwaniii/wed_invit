@@ -21,37 +21,20 @@ function init(){
         // behaviors: ["drag", "dblClickZoom", "multiTouch"]  
     });
 
+    // удаляем лишние элементы управления 
+
     myMap.controls
         .remove('fullscreenControl')
         .remove('typeSelector');
 
-
+    // отключаем скрол и управление 1 пальцем в мобильной версии
 
     if(isMobile.any()){
         myMap.behaviors.disable('scrollZoom');
         myMap.behaviors.disable('drag');
     }
 
-    
-
-
-    // myPlacemarkWithContent = new ymaps.Placemark([55.765802, 38.644561], {
-    //     hintContent: 'Место проведения',
-    //     balloonContent: 'Ресторан'
-    // }, {
-    //     // Опции.
-    //     // Необходимо указать данный тип макета.
-    //     iconLayout: 'default#imageWithContent',
-    //     // Своё изображение иконки метки.
-    //     iconImageHref: 'img/pin_maps.png',
-    //     // Размеры метки.
-    //     iconImageSize: [75, 75],
-    //     // Смещение левого верхнего угла иконки относительно
-    //     // её "ножки" (точки привязки).
-    //     iconImageOffset: [0, 0],
-    //     // Смещение слоя с содержимым относительно слоя с картинкой.
-    //     // iconContentOffset: [-30, 50],
-    // })
+    //создаем и добавляем метку нашего места
 
     myPlacemark = new ymaps.Placemark([55.765802, 37.644561], {
         hintContent: 'Место проведения',
@@ -63,72 +46,47 @@ function init(){
     myMap.geoObjects
         .add(myPlacemark)
 
-
+        // меняем цвет при наведение на метку 
 
     myPlacemark.events
         .add('mouseenter', function (e){
-            e.get('target').options.set({preset: 'islands#redHeartIcon'});
+            e.get('target').options.set({preset: 'islands#redHeartIcon'})
         })
         .add('mouseleave', function (e){
             e.get('target').options.set({preset: 'islands#orangeHeartIcon'});
         });
 
 
-        // $('<div><input type="button" value="Click!"/></div>')
-        // .css({ position: 'absolute', left: '5px', top: '50px'})
-        // .appendTo(map.panes.get('controls').getElement());
+        // для перемещения по карте в мобильной версии использовать два пальца 
+ 
 
+        let eventsPaneEl = myMap.panes.get("events").getElement(), 
+            mobilePanelText = {
+                RU: "Чтобы переместить карту проведите по ней двумя пальцами"
+                },
+            mobilePanelStyles = {
+                alignItems: "center",
+                boxSizing: "border-box",
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+                fontSize: "20px",
+                fontFamily: "Arial,sans-serif",
+                opacity: "0.0",
+                padding: "25px",
+                textAlign: "center",
+                transition: "opacity .3s",
+                touchAction: "auto"
+                };
 
-        
-    // let selectedPane = new ymaps.pane.MovablePane(myMap, { zIndex: 420})
-    // myMap.panes.append('myLayer', selectedPane)
-
-    // myRectangle = new ymaps.Rectangle([[0, 0],[70, 179]], {}, {
-    //     fillColor: '#000000',
-    //     fillOpacity: .8,
-    //     pane: 'myLayer'
-    // });
-
-    // myMap.events
-    //     .add('mousemove', (e) => {
-    //         myMap.geoObjects.add(myRectangle)
-    //     })
-    //     .add('mouseleave', (e) => {
-    //         myMap.geoObjects.remove(myRectangle)
-    //     })
-
-        // ------------
-
-        let eventsPaneEl = myMap.panes.get("events").getElement(), mobilePanelText = {
-            RU: "Чтобы переместить карту проведите по ней двумя пальцами"
-        }
-
-        // window.isDragMap = isMobile;
-
-
-        let
-         mobilePanelStyles = {
-            alignItems: "center",
-            boxSizing: "border-box",
-            color: "white",
-            display: "flex",
-            justifyContent: "center",
-            fontSize: "20px",
-            fontFamily: "Arial,sans-serif",
-            opacity: "0.0",
-            padding: "25px",
-            textAlign: "center",
-            transition: "opacity .3s",
-            touchAction: "auto"
-        };
         Array.prototype.forEach.call(Object.keys(mobilePanelStyles), (function(name) {
             eventsPaneEl.style[name] = mobilePanelStyles[name]
-        }
+            }
         )),
 
         ymaps.domEvent.manager.add(eventsPaneEl, "touchmove", (function(event) {
-            console.log(event)
-            1 === event.get("touches").length && (eventsPaneEl.style.transition = "opacity .3s",
+            1 === event.get("touches").length && (
+            eventsPaneEl.style.transition = "opacity .3s",
             eventsPaneEl.style.background = "rgba(0, 0, 0, .45)",
             eventsPaneEl.textContent = mobilePanelText.RU,
             eventsPaneEl.style.opacity = "1")
@@ -159,14 +117,12 @@ function init(){
     //     projection: ymaps.projection.sphericalMercator,
     // }));
 
-    // myMap.copyrights.add('© OpenStreetMap contributors, CC-BY-SA');
-
+    
     // myMap.events.add("mousemove", function(e) {
-    //     myMap.hint.show(e.get('coordPosition'), 'Кто-то щелкнул правой кнопкой');
-    // })
-    myMap.events.add('multitouchmove', function (e) {
-        console.log(e.get('type'))
-    });
+        //     myMap.hint.show(e.get('coordPosition'), 'Кто-то щелкнул правой кнопкой');
+        // })
+    myMap.copyrights.add('© Олег и Ксения = ОК');
+
 
     
 
