@@ -40,7 +40,7 @@ function init(){
         hintContent: 'Место проведения',
         balloonContent: 'Ресторан <strong>Лучший</strong>'
     }, {
-        preset: 'islands#orangeHeartIcon',
+        preset: 'islands#pinkHeartIcon',
     })
 
     myMap.geoObjects
@@ -53,7 +53,7 @@ function init(){
             e.get('target').options.set({preset: 'islands#redHeartIcon'})
         })
         .add('mouseleave', function (e){
-            e.get('target').options.set({preset: 'islands#orangeHeartIcon'});
+            e.get('target').options.set({preset: 'islands#pinkHeartIcon'});
         });
 
 

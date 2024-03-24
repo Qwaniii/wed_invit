@@ -55,6 +55,7 @@
 
 #add {
   opacity: 0;
+  font-size: var(--font-text);
 }
 
 .add-to>a>img {

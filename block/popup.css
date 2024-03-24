@@ -2,68 +2,89 @@
   /* popup */
 
   .popup__wrapper {
-    display: none;
     position: fixed;
     top: 0;
-    left: 0;
-    bottom: 0;
     right: 0;
-    justify-content: center;
-    align-items: center;
-    background-color: #0006;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    opacity: 0;
+    -webkit-transition: opacity ease-in-out .3s;
+    -moz-transition: opacity ease-in-out .3s;
+    -o-transition: opacity ease-in-out .3s;
+    transition: opacity ease-in-out .3s;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0 20px;
+    background-color: rgba(0,0,0,.6);
     z-index: 100;
+    display: none;
+    outline: 0;
   }
   
   .popup__wrapper.active {
-    display: flex;
-    animation: fade .3s;
+    display: block;
+    opacity: 1;
+    animation: fade .3s ease-in;
   }
 
   @keyframes fade {
     0% {
         opacity: 0;
+        transform: translateY(30%) scale(.5);
+        
     }
 
     100% {
         opacity: 1;
+        transform: translateY(0) scale(1);
+
     }
   }
   
-  .popup {
+  #popup-form,
+  #popup-form3 {
     width: calc(100% - 20px);
-    max-height: calc(100% - 20px);
-    overflow-y: auto;
     box-sizing: border-box;
-    max-width: 600px;
-    padding: 20px;
     border-radius: 10px;
-    background-color: #fff;
     box-shadow: 0 0 2px 0 #0004;
+    background-color: white;
+    transform: translateY(50%);
     position: relative;
+    margin: 65px auto;
+    position: relative;
+    left: auto;
+    right: auto;
+    max-width: 600px;
     display: none;
-    justify-content: center;
+  }
+  
+  #popup-form.active,
+  #popup-form3.active {
+    display: block;
+    transition: transform .3s;
+    transform: translateY(0);
   }
   
 
   /* .popup:first-child {
     padding-top: 100px;
   } */
-  
-  .popup.active {
-    display: flex;
-  }
+
 
   .popup-close {
+    position: fixed;
     width: 40px;
     height: 40px;
     border-radius: 6px;
     background: var(--color-primary);
-    position: absolute;
     right: 10px;
     top: 10px;
     cursor: pointer;
     transition: .3s;
-    z-index: 10;
+    z-index: 10000;
   }
 
   .popup-close:hover {
@@ -97,10 +118,17 @@
   }
 
   @media (max-width: 600px) {
-    .popup {
+    .popup__wrapper {
+      padding: 0
+
+    }
+
+    #popup-form,
+    #popup-form3  {
+      margin: 0;
       width: 100%;
-      max-height: none;
       height: 100%;
-      /* overflow-y: hidden; */
+      border-radius: 0px;
+      overflow-y: auto;
     }
   }

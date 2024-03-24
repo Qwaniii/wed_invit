@@ -59,9 +59,7 @@ closePopup.addEventListener("click", (e) => {
 // })
 
 window.addEventListener("popstate", (event) => {
-  // console.log(
-  //   `location: ${document.location}, state: ${JSON.stringify(event.state)}`,
-  // );
+
   event.preventDefault();
 
   if (popup.classList.contains("active")){
@@ -80,6 +78,7 @@ window.addEventListener("popstate", (event) => {
 
 
 popupWrapper.addEventListener("click", function(e) {
+  console.log(e.target)
   if (e.target.classList.contains("popup__wrapper") && popup.classList.contains("active")) {
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active");

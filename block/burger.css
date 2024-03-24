@@ -37,20 +37,20 @@
     z-index: 5;
     display: none;
     background-color: rgb(0, 0, 0, .5);
-    transition: 0.2s;
+    transition: all 0.2s;
 }
 
 .menu-wrapper.active {
     display: flex;
-    animation: fade .2s;
+    animation: fadeBurg .2s;
   }
 
   .img-bottom {
     opacity: .1;
-    filter: blur(.9);
+    filter: blur(1px);
   }
 
-  @keyframes fade {
+  @keyframes fadeBurg {
     0% {
         opacity: 0;
     }
@@ -61,11 +61,22 @@
   }
 
   
+  @-webkit-keyframes fadeBurg {
+    0% {
+      -webkit-opacity: 0;
+    }
+
+    100% {
+      -webkit-opacity: 1;
+    }
+  }
+
+  
   /* burger */
   
   .menu .menu-burger__header {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 3px;
     background:var(--color-button);
     position: absolute;

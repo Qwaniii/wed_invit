@@ -17,6 +17,7 @@
 }
 
 
+
 .place__text {
     font-size: var(--font-text);
     font-family: var(--font-family-other);
@@ -52,7 +53,7 @@
 
 
 @media (max-width: 849px) {
-    .place__main, 
+    .place__main,
     .place__text {
         padding: 0 20px;
     }
