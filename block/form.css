@@ -1,20 +1,55 @@
 .first-form {
     text-align: center;
+}
 
+.popup-img > img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+.popup-img {
+    position: relative;
+}
+
+.popup-img::after {
+    content: "Олег & Ксения";
+    width: 100%;
+    font-size: 33px;
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    filter: drop-shadow(5px 5px 3px gray)
+}
+
+.first-form__header {
+    font-size: 36px;
+}
+
+.first-form > iframe {
+    padding-top: 20px;
 }
 
 .first-form__text {
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 22px;
-    padding: 40px;
+    /* font-family:Georgia, 'Times New Roman', Times, serif; */
+    font-family: var(--font-family-other);
+    font-size: 18px;
+    padding: 0 35px;
+    padding-top: 20px;
     box-sizing: border-box;
-    text-align: center;
+    text-align:center;
+}
+
+.first-form__text::first-letter {
+    color:pink;
 }
 
 @media (max-width: 600px) {
 
     iframe {
-        width: 100%;
+        width: 95%;
         z-index: 1;
     }
 }

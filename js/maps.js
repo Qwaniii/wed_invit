@@ -9,23 +9,48 @@ let isMobile = {
     }
 };
 
-mapLayer = document.querySelector("#map")
-
 ymaps.ready(init);
+
 function init(){
     let myMap = new ymaps.Map("map", {
         center: [55.765802, 37.644561],
         zoom: 15,
-        controls: ['smallMapDefaultSet'],
+        controls: [],
         // type: null,
         // behaviors: ["drag", "dblClickZoom", "multiTouch"]  
+    },
+    {
+        suppressMapOpenBlock: true
     });
+
+    var zoomControl = new ymaps.control.ZoomControl({
+        options: {
+            size: 'small',
+            float: 'none',
+            position: {
+                bottom: 150,
+                right: 10
+            }
+        }
+    });
+
+    myMap.controls.add(zoomControl);
+
+
+
 
     // удаляем лишние элементы управления 
 
-    myMap.controls
-        .remove('fullscreenControl')
-        .remove('typeSelector');
+    // myMap.controls
+    //     .remove('fullscreenControl')
+    //     .remove('typeSelector')
+    //     .remove('geolocationControl')
+    //     .remove('searchControl');
+
+    // добавляем  элементы управления 
+
+    // myMap.controls
+    //     .add('smallZoomControl');
 
     // отключаем скрол и управление 1 пальцем в мобильной версии
 
@@ -36,7 +61,9 @@ function init(){
 
     //создаем и добавляем метку нашего места
 
-    myPlacemark = new ymaps.Placemark([55.765802, 37.644561], {
+    let ourPlace = [55.765802, 37.644561];
+
+    let myPlacemark = new ymaps.Placemark(ourPlace, {
         hintContent: 'Место проведения',
         balloonContent: 'Ресторан <strong>Лучший</strong>'
     }, {
@@ -123,12 +150,179 @@ function init(){
         // })
     myMap.copyrights.add('© Олег и Ксения = ОК');
 
+    hideButton = new ymaps.control.Button({
+        data: {content: "Скрыть"},
+        options: {selectOnClick: true}
+    })
+    hideButton.select()
+
+    firstButton = new ymaps.control.Button({
+        data: {content: "Такси"},
+        options: {selectOnClick: true}
+    });
+
+    myMap.controls.add(firstButton, {position: {
+        right: 10,
+        top: 10
+    }
+    });
 
     
 
 
 
+    // Создадим панель маршрутизации.
+    let routePanelControlTaxi = new ymaps.control.RoutePanel({
+        options: {
+            // Добавим заголовок панели.
+            showHeader: true,
+            // Зададим текст заголовка панели. 
+            title: 'Вызвать такси',
+            // Пользователь сможет построить только маршрут на такси.
+            routePanelTypes: {taxi: true},
+            // Зададим ширину панели.
+            maxWidth: '210px',
+        }
+    });
+    // Зададим тип маршрутизации по умолчанию.
+    routePanelControlTaxi.routePanel.state.set({
+        // Зададим тип маршрутизации - такси.
+        type: "taxi",
+        // Зададим адрес пункта назначения.
+        to: ourPlace,
+        // Отключим возможность задавать пункт отправления в поле ввода.
+        toEnabled: false
+    });
 
+
+    secondButton = new ymaps.control.Button({
+        data: {content: "Маршрут"},
+        options: {selectOnClick: true}
+    });
+
+    myMap.controls.add(secondButton, {position: {
+        right: 10,
+        top: 45
+    }});
+
+
+
+    // Создадим панель маршрутизации.
+    let routePanelControlAuto = new ymaps.control.RoutePanel({
+        options: {
+            // Добавим заголовок панели.
+            showHeader: true,
+            // Зададим текст заголовка панели. 
+            title: 'Добраться самому',
+            // Пользователь сможет построить только маршрут на такси.
+            routePanelTypes: {
+                masstransit: true,
+                pedestrian: true,
+                auto: true,
+            },
+            // Зададим ширину панели.
+            maxWidth: '210px',
+        },
+    });  
+
+    // Зададим тип маршрутизации по умолчанию.
+    routePanelControlAuto.routePanel.state.set({
+        // Зададим тип маршрутизации - такси.
+        type: "auto",
+        // Зададим адрес пункта назначения.
+        to: ourPlace,
+        // Отключим возможность задавать пункт отправления в поле ввода.
+        toEnabled: false
+    });
+
+    // добавляем на карту вызов такси при нажатии кнопки
+
+    hideButton.events.add("deselect", function() {
+        if (firstButton.isSelected()) {
+            routePanelControlTaxi.options.set({visible: false})
+            hideButton.data.set({content : "Показать"})
+
+        }
+        else if (secondButton.isSelected()) {
+            routePanelControlAuto.options.set({visible: false})
+            hideButton.data.set({content : "Показать"})
+        }
+    })
+
+    hideButton.events.add("select", function() {
+        if (firstButton.isSelected()) {
+            routePanelControlTaxi.options.set({visible: true})
+            hideButton.data.set({content : "Скрыть"})
+        }
+        else if (secondButton.isSelected()) {
+            routePanelControlAuto.options.set({visible: true})
+            hideButton.data.set({content : "Скрыть"})
+        }
+    })
+
+
+
+    firstButton.events.add("select", function() {
+        routePanelControlTaxi.options.set({visible: true})
+        hideButton.select()
+        myMap.controls
+            .add(routePanelControlTaxi, {
+                position: {
+                    left: 10,
+                    bottom: 25
+                }
+            })
+            .add(hideButton, {
+                position: {
+                    right: 10,
+                    bottom: 25
+                }
+            })
+            .remove(secondButton);
+        myMap.geoObjects.remove(myPlacemark)
+    })
+
+    firstButton.events.add("deselect", function() {
+        myMap.controls
+            .remove(routePanelControlTaxi)
+            .remove(hideButton)
+            .add(secondButton);
+        myMap.geoObjects.add(myPlacemark)
+
+    })
+
+        
+    secondButton.events.add("select", function() {
+        routePanelControlAuto.options.set({visible: true})
+        hideButton.select()
+        myMap.controls
+            .add(routePanelControlAuto, {position: {
+                left: 10,
+                bottom: 25
+            }})
+            .add(hideButton, {
+                position: {
+                    right: 10,
+                    bottom: 25
+                }
+            })
+            .remove(firstButton);
+        myMap.geoObjects.remove(myPlacemark)
+
+
+    })
+    secondButton.events.add("deselect", function() {
+        myMap.controls
+            .remove(routePanelControlAuto)
+            .remove(hideButton)
+            .add(firstButton);
+        myMap.geoObjects.add(myPlacemark)
+
+    })
+
+    // Зададим местоположение пользователя в качестве начальной точки маршрута.
+    routePanelControlTaxi.routePanel.geolocate('from');
+    routePanelControlAuto.routePanel.geolocate('from');
 
     // myPlacemark.balloon.open()
 }
