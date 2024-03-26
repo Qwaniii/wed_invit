@@ -10,7 +10,21 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    position: relative;
 }
+
+.family-text::after {
+    content: "";
+    background: center /70% no-repeat url(../img/third.png);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+    filter: brightness(1.3) opacity(.4);
+}
+
 .family-text h1{
     font-size: var(--font-first);
 }
@@ -29,8 +43,17 @@
 }
 
 
+
 @media (max-width: 849px) {
     .family-text {
         padding: 0 20px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .family-text::after {
+        background: center /cover no-repeat url(../img/third.png);
+        filter: brightness(1.3) opacity(.2);
     }
 }

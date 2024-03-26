@@ -6,7 +6,23 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
+
 }
+
+
+#date::after {
+  content: "";
+  background: center /70% no-repeat url(../img/second.png);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+  filter: brightness(1) opacity(.4);
+}
+
 
 #dateh1 {
     font-size: var(--font-first);
@@ -134,3 +150,12 @@
         padding: 0 20px;
     }
 }
+
+  @media (max-width: 600px) {
+    #date::after {
+      background: center /cover no-repeat url(../img/second.png);
+      filter: brightness(1) opacity(.2);
+    
+    }
+  }
+
