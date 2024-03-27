@@ -178,9 +178,6 @@ function updateScroll() {
   windowBottomPosition >= visibleQuizBtnDone.offsetTop ? visibleQuizBtnDone.style.animation = "var(--animation-scale) .4s forwards" : "none";
   windowBottomPosition >= visibleQuizBtnNot.offsetTop ? visibleQuizBtnNot.style.animation = "var(--animation-scale) .8s forwards" : "none";
 
-
-
-
 }
  
 window.addEventListener('scroll', updateScroll);

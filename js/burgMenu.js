@@ -48,6 +48,7 @@ window.addEventListener("popstate", (event) => {
 function addSmoothScroll(anchor) {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
+    // console.log(e.srcElement.innerText)
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });
@@ -58,6 +59,8 @@ function addSmoothScroll(anchor) {
   });
 }
  
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+let massLink = document.querySelectorAll('a[href^="#"]')
+
+massLink.forEach(anchor => {
   addSmoothScroll(anchor);
 });

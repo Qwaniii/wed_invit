@@ -10,10 +10,12 @@
     position: relative;
 }
 
+.quiz-text {
+}
 
 .quiz::after {
     content: "";
-    background: center /28% no-repeat url(../img/first.png);
+    background: center /contain no-repeat url(../img/first.png);
     position: absolute;
     top: 0px;
     right: 0px;
@@ -22,6 +24,7 @@
     z-index: -1;
     filter: brightness(1.1) opacity(0.5);
 }
+
 
 #quiz-h1 {
     font-size: var(--font-first);

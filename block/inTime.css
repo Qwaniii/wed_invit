@@ -1,0 +1,13 @@
+.day-time {
+    min-height: var(--minimal-height-block);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.day-time__inner {
+    font-size: 30px;
+}

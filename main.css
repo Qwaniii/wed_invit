@@ -8,6 +8,7 @@
 @import url(./block/chat.css);
 @import url(./block/quiz.css);
 @import url(./block/form.css);
+@import url(./block/inTime.css);
 
 
 :root {
@@ -66,7 +67,7 @@
 /* скролбар */
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 2px;
   
 }
 
@@ -88,21 +89,21 @@
 }
 
 /* --------------------- */
-/* html {
+html {
   scrollbar-gutter: stable;
-} */
+}
 
 body {
     margin: 0;
     font-family: var(--font-family-main);
     overflow-x: hidden;
-    /* scrollbar-gutter: stable; */
 }
 
 body.popup-active {
   height: 100vh;
   min-height: 100vh;
   overflow: hidden;
+  scrollbar-gutter: stable;
 }
 
 a {

@@ -13,7 +13,7 @@
 
 .chat::after {
   content: "";
-  background: center /55% no-repeat url(../img/four.png);
+  background: center /70% no-repeat url(../img/four.png);
   position: absolute;
   top: 0px;
   right: 0px;

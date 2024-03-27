@@ -15,7 +15,7 @@
 
 .family-text::after {
     content: "";
-    background: center /70% no-repeat url(../img/third.png);
+    background: center /contain no-repeat url(../img/third.png);
     position: absolute;
     top: 0px;
     right: 0px;

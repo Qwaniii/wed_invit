@@ -13,7 +13,7 @@
 
 #date::after {
   content: "";
-  background: center /70% no-repeat url(../img/second.png);
+  background: center /80% no-repeat url(../img/second.png);
   position: absolute;
   top: 0px;
   right: 0px;
