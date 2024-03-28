@@ -3,11 +3,82 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
+    margin: 40px 0;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#time-h1 {
+    font-size: var(--font-first);
+    position: relative;
+    opacity: 0;
 }
 
 .day-time__inner {
+    font-family: var(--font-family-other);
     font-size: 30px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+}
+
+.img-time-start {
+
+}
+
+.img-time-start {
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    filter: opacity(.2) brightness(1) blur(1px) hue-rotate(310deg);
+}
+
+.img-wrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-color: white;
+    /* animation: inHeight 5s ease-out forwards; */
+}
+
+@keyframes inHeight {
+    0% {
+        transform: translateY(0);
+        
+    }
+
+    99% {
+        transform: translateY(150%);
+    }
+
+    100% {
+        display: none;
+    }
+}
+/* .day-time::after {
+    content: "";
+    background: center /30%  no-repeat url(../img/brush.png);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+} */
+
+@media (max-width: 600px) {
+    .day-time {
+    }
+
+    .day-time__inner {
+        grid-template-columns: 1fr;
+    }
 }

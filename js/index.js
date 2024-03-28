@@ -178,6 +178,18 @@ function updateScroll() {
   windowBottomPosition >= visibleQuizBtnDone.offsetTop ? visibleQuizBtnDone.style.animation = "var(--animation-scale) .4s forwards" : "none";
   windowBottomPosition >= visibleQuizBtnNot.offsetTop ? visibleQuizBtnNot.style.animation = "var(--animation-scale) .8s forwards" : "none";
 
+
+  //  блок времени 
+
+  let imgBack = document.querySelector(".img-wrapper"),
+      startTime = document.querySelector("#time"),
+      timeH1 = document.querySelector("#time-h1")
+
+
+  windowBottomPosition >= startTime.offsetTop ? imgBack.style.animation = "inHeight 7s .3s ease-out forwards" : "none";
+  windowBottomPosition >= startTime.offsetTop ? timeH1.style.animation = "var(--animation-scale) .3s forwards" : "none";
+
+
 }
  
 window.addEventListener('scroll', updateScroll);
