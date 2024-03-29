@@ -1,8 +1,10 @@
 .day-time {
     min-height: var(--minimal-height-block);
     display: flex;
+    -webkit-display: flex;
     flex-direction: column;
     gap: 60px;
+    -webkit-gap: 60px;
     margin: 40px 0;
     box-sizing: border-box;
     justify-content: center;
@@ -20,14 +22,11 @@
 }
 
 .day-time__inner {
-    font-family: var(--font-family-other);
+    font-family: var(--font-family-text);
     font-size: 30px;
     display: grid;
     grid-template-columns: 1fr 400px;
-}
-
-.img-time-start {
-
+    opacity: 0;
 }
 
 .img-time-start {
@@ -36,7 +35,7 @@
     position: absolute;
     top: 0;
     z-index: -2;
-    filter: opacity(.1) brightness(1) blur(2px) hue-rotate(5deg);
+    filter: opacity(.1) brightness(1.1) blur() hue-rotate(-50deg);
 }
 
 .img-wrapper {
@@ -76,5 +75,8 @@
 
     .day-time__inner {
         grid-template-columns: 1fr;
+        row-gap: 10px;
     }
+
+
 }

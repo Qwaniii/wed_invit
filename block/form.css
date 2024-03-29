@@ -266,13 +266,15 @@
     border: 2px solid #AAAAAA;
     background-color: transparent;
     cursor: pointer;
-    transition: color 0.25s ease-out;
+    transition: all 0.25s ease-out;
     -webkit-transition: color 0.25s ease-out;
 
   }
 
   input[type=submit]:hover {
     color: #ff92aa;
+    border: 2px solid #ff92aa;
+
   }
 
 

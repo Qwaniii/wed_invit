@@ -188,11 +188,18 @@ function updateScroll() {
 
   let imgBack = document.querySelector(".img-wrapper"),
       startTime = document.querySelector("#time"),
-      timeH1 = document.querySelector("#time-h1")
+      timeH1 = document.querySelector("#time-h1"),
+      firstTime = document.querySelector("#first-time"),
+      allTime = document.querySelectorAll(".day-time__inner");
 
 
-  windowBottomPosition >= startTime.offsetTop ? imgBack.style.animation = "inHeight 7s .3s ease-out forwards" : "none";
-  windowBottomPosition >= startTime.offsetTop ? timeH1.style.animation = "var(--animation-scale) .3s forwards" : "none";
+  windowBottomPosition >= startTime.offsetTop ? imgBack.style.animation = "inHeight 10s .3s ease-out forwards" : "none";
+  windowBottomPosition >= startTime.offsetTop ? timeH1.style.animation = "var(--animation-scale) .1s forwards" : "none";
+  if(windowBottomPosition >= startTime.offsetTop + firstTime.offsetTop)  {
+    for (let i= 0 ; i < allTime.length; i++) {
+      allTime[i].style.animation = `var(--animation-block) ${i}.5s forwards`;
+    }
+  }
 
 
 }

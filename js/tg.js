@@ -1,27 +1,32 @@
 const api = new Api()
 
-let nameGuest = document.querySelector("#fist-last-name"),
-    buttonSubmit = document.querySelector("#submit"),
-    form = document.forms[0];
+let nameGuest = document.querySelector("#first-last-name"),
+    nameCancel = document.querySelector("#no-first-last-name"),
+    buttonSubmitCancel = document.querySelector("#submit-second"),
+    form = document.forms[0],
+    formSecond = document.forms[1],
+    nameToSent = "Имя: ",
+    nameToCancelSent = "Имя: ";
 
-    let nameToSent = "Имя: "
+formSecond.addEventListener("submit", function(e) {
+    e.preventDefault();
+    for (let i = 0; i < formSecond.length; i++) {
+            if(formSecond[i].name === "name") {           
+                nameToCancelSent += formSecond[i].value
+            }
+        }
 
-nameGuest.addEventListener("change", function(e) {
-    nameToSent  += e.target.value.toString()
-    console.log(nameToSent)
+    api.sendMessage(`Не получится прийти%0A`, nameToCancelSent)
+    .then(res => res.json())
+    .then(data => {
+        if (data.ok === true) {
+            formSecond.reset()
+            closePopup.click()
+    
+        }
+    })
 })
 
-// buttonSubmit.addEventListener("click", function(e) {
-//     e.preventDefault();
-//     api.sendMessage("Ответы на вопросы", nameToSent)
-//         .then(res => res.json())
-//         .then(data => {
-//             if (data.ok === true) {
-//                 form.reset()
-//             }
-//         })
-
-// })
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -30,17 +35,21 @@ form.addEventListener("submit", function(e) {
     for (let i = 0; i < form.length; i++) {
     
         if(form[i].checked) {
-            form[i].type === "radio" ? bodyIn += `\n` + form[i].value.toString() : bodyDrink += `\n` + form[i].value.toString()
+            form[i].type === "radio" ? bodyIn += `%0A` + form[i].value.toString() : bodyDrink += `%0A` + form[i].value.toString()
         }
         
+        if(form[i].name === "name") {
+            nameToSent += form[i].value
+        }
     }
-    console.log(bodyIn + `\n` + bodyDrink + `\n` +  nameToSent)
-    
+
+    api.sendMessage(`Анкета гостя%0A`, bodyIn + `%0A%0A` + bodyDrink + `%0A%0A` +  nameToSent)
+        .then(res => res.json())
+        .then(data => {
+            if (data.ok === true) {
+                form.reset()
+                closePopup.click()
+        
+            }
+        })
 })
-
-// let formFood = document.querySelector(".form-drink")
-
-// formFood.addEventListener("change", function(e) {
-//     e.preventDefault()
-//     console.log(form[1].checked)
-// })
