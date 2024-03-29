@@ -36,7 +36,7 @@
     position: absolute;
     top: 0;
     z-index: -2;
-    filter: opacity(.2) brightness(1) blur(1px) hue-rotate(310deg);
+    filter: opacity(.1) brightness(1) blur(2px) hue-rotate(5deg);
 }
 
 .img-wrapper {
@@ -55,12 +55,8 @@
         
     }
 
-    99% {
-        transform: translateY(150%);
-    }
-
     100% {
-        display: none;
+        transform: translateY(150%);
     }
 }
 /* .day-time::after {

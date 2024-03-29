@@ -18,6 +18,7 @@ const closePopup = document.querySelector(".popup-close")
 const body = document.body
 
 btn.addEventListener("click", (e) => {
+  e.stopPropagation()
   e.preventDefault();
   if(!popup.classList.contains("active")) {
     popup.classList.add("active");
@@ -29,6 +30,7 @@ btn.addEventListener("click", (e) => {
 
 
 btnNot.addEventListener("click", (e) => {
+  e.stopPropagation()
   e.preventDefault();
   if(!popup3.classList.contains("active")) {
     popup3.classList.add("active");
@@ -78,7 +80,6 @@ window.addEventListener("popstate", (event) => {
 
 
 popupWrapper.addEventListener("click", function(e) {
-  console.log(e.target)
   if (e.target.classList.contains("popup__wrapper") && popup.classList.contains("active")) {
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active");
@@ -146,37 +147,41 @@ function updateScroll() {
 
   // блок дата
 
+  let date = document.querySelector("#date")
   let visibleDate = document.querySelector("#dateh1");
   let visibleCalendar = document.querySelector("#calendar1");
   let visibleAddToCalendar = document.querySelector("#add");
 
-  windowBottomPosition >= visibleDate.offsetTop ? visibleDate.style.animation = "var(--animation-scale) .3s forwards" : "none";
-  windowBottomPosition >= visibleCalendar.offsetTop ? visibleCalendar.style.animation = "var(--animation-block) 0.4s forwards" : "none";
-  windowBottomPosition >= visibleAddToCalendar.offsetTop ? visibleAddToCalendar.style.animation = "var(--animation-block) 0.5s forwards" : "none";
+
+  windowBottomPosition >= date.offsetTop + visibleDate.offsetTop ? visibleDate.style.animation = "var(--animation-scale) .3s forwards" : "none";
+  windowBottomPosition >= date.offsetTop + visibleCalendar.offsetTop ? visibleCalendar.style.animation = "var(--animation-block) 0.5s forwards" : "none";
+  windowBottomPosition >= date.offsetTop + visibleAddToCalendar.offsetTop ? visibleAddToCalendar.style.animation = "var(--animation-block) 0.6s forwards" : "none";
 
   // блок телеграм
 
+  let chat = document.querySelector("#chat")
   let visibleChatMain = document.querySelector("#chat-h1");
   let visibleChatText = document.querySelector("#chat-text");
   let visibleChatBtn = document.querySelector("#btn-telegram");
 
-  windowBottomPosition >= visibleChatMain.offsetTop ? visibleChatMain.style.animation = "var(--animation-scale) .3s forwards" : "none";
-  windowBottomPosition >= visibleChatText.offsetTop ? visibleChatText.style.animation = "var(--animation-block) 0.4s forwards" : "none";
-  windowBottomPosition >= visibleChatBtn.offsetTop ? visibleChatBtn.style.animation = "var(--animation-scale) 0.5s forwards" : "none";
+  windowBottomPosition >= chat.offsetTop + visibleChatMain.offsetTop ? visibleChatMain.style.animation = "var(--animation-scale) .3s forwards" : "none";
+  windowBottomPosition >= chat.offsetTop + visibleChatText.offsetTop ? visibleChatText.style.animation = "var(--animation-block) 0.4s forwards" : "none";
+  windowBottomPosition >= chat.offsetTop + visibleChatBtn.offsetTop ? visibleChatBtn.style.animation = "var(--animation-scale) 0.5s forwards" : "none";
 
 
   // блок опроса
 
+  let quiz = document.querySelector("#quiz")
   let visibleQuizFirst = document.querySelector("#quiz-h1")
   let visibleQuizSecond = document.querySelector("#quiz-p")
   let visibleQuizBtnDone = document.querySelector(".done")
   let visibleQuizBtnNot = document.querySelector(".btn-not")
 
 
-  windowBottomPosition >= visibleQuizFirst.offsetTop ? visibleQuizFirst.style.animation = "var(--animation-scale) .3s forwards" : "none";
-  windowBottomPosition >= visibleQuizSecond.offsetTop ? visibleQuizSecond.style.animation = "var(--animation-block) 0.4s forwards" : "none";
-  windowBottomPosition >= visibleQuizBtnDone.offsetTop ? visibleQuizBtnDone.style.animation = "var(--animation-scale) .4s forwards" : "none";
-  windowBottomPosition >= visibleQuizBtnNot.offsetTop ? visibleQuizBtnNot.style.animation = "var(--animation-scale) .8s forwards" : "none";
+  windowBottomPosition >= quiz.offsetTop + visibleQuizFirst.offsetTop ? visibleQuizFirst.style.animation = "var(--animation-scale) .3s forwards" : "none";
+  windowBottomPosition >= quiz.offsetTop + visibleQuizSecond.offsetTop ? visibleQuizSecond.style.animation = "var(--animation-block) 0.4s forwards" : "none";
+  windowBottomPosition >= quiz.offsetTop + visibleQuizBtnDone.offsetTop ? visibleQuizBtnDone.style.animation = "var(--animation-scale) .4s forwards" : "none";
+  windowBottomPosition >= quiz.offsetTop + visibleQuizBtnNot.offsetTop ? visibleQuizBtnNot.style.animation = "var(--animation-scale) .8s forwards" : "none";
 
 
   //  блок времени 

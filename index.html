@@ -105,7 +105,7 @@
           <section class="day-time" id="time">
             <h1 id="time-h1">Расписание дня</h1>
             <div class="img-wrapper"></div>
-            <img class="img-time-start" src="./img/brush.png">
+            <img class="img-time-start" src="./img/bru.png">
             <div class="day-time__inner"><span id="start-wed">15:00</span><span>Welcome зона в ресторане</span></div>
             <div class="day-time__inner"><span>16:00</span><span>Начало мероприятия</span></div>
             <div class="day-time__inner"><span>19:00</span><span>Праздничный торт</span></div>
@@ -148,13 +148,83 @@
       <div class="popup" id="popup-form">
         <div class="first-form">
           <div class="popup-img"><img  src="./img/img_1.jpg"></div>
-          <div  class="first-form__header">Анкета гостя</div>
-          <div class="first-form__text">Мы хотим, чтобы свадьба прошла идеально не только для нас, но и для вас.
+          <div class="first-form-wrapper">
+            <div  class="first-form__header">Анкета гостя</div>
+            <div class="first-form__text">
+              <p>Мы хотим, чтобы свадьба прошла идеально не только для нас, но и для вас. Пожалуйста, заполните небольшой опросник по банкетному меню.</p>
+            </div>
+            <!-- <iframe src="https://forms.yandex.ru/u/65dc6d6243f74f03b963527d/?iframe=1" frameborder="0" name="ya-form-65dc6d6243f74f03b963527d" width="350"></iframe> -->
+            <form class="form" type="submit">
+              <div class="form-food wrapperOuter">
+                <p>Какие блюда предпочитаете?</p>
+                <ul>
+                  <li>
+                    <input type="radio" id="meat" name="food" value="Блюдо из мяса">
+                    <label for="meat">Блюдо из мяса</label>
+                    
+                    <div class="check"></div>
+                  </li>
+                  
+                  <li>
+                    <input type="radio" id="fish" name="food" value="Блюдо из рыбы">
+                    <label for="fish">Блюдо из рыбы</label>
+                    
+                    <div class="check"><div class="inside"></div></div>
+                  </li>
+                  
+                  <li>
+                    <input type="radio" id="just" name="food" value="Вегетарианское блюдо">
+                    <label for="just">Вегетарианское блюдо</label>
+              
+                    <div class="check"><div class="inside"></div></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="form-drink wrapperOuter">
+                <p>Какой предпочитаете алкоголь?</p>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="red-wine" name="drink" value="Красное вино">
+                    <label for="red-wine">Красное вино</label>
+
+                    <div class="select"></div>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="white-wine" name="drink" value="Белое вино">
+                    <label for="white-wine">Белое вино</label>
+
+                    <div class="select"></div>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="silent-wine" name="drink" value="Игристое вино">
+                    <label for="silent-wine">Игристое вино</label>
+
+                    <div class="select"></div>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="wisky" name="drink" value="Крепкий алкоголь">
+                    <label for="wisky">Крепкий алкоголь</label>
+
+                    <div class="select"></div>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="no-alco" name="drink" value="Алкоголь пить не буду">
+                    <label for="no-alco">Алкоголь пить не буду</label>
+
+                    <div class="select"></div>
+                  </li>
+                </ul>  
+              </div>
+              <div class="name-guest">
+                <label for="fist-last-name">Ваше имя и фамилия</label>
+                <input id="fist-last-name" type="text" name="name" required placeholder="Иван Николаев">
+              </div>
+              <input type="submit" id="submit" type="submit">
+            </form>
           </div>
-          <div class="first-form__text">Пожалуйста, заполните небольшой опросник по банкетному меню.</div>
-          <iframe src="https://forms.yandex.ru/u/65dc6d6243f74f03b963527d/?iframe=1" frameborder="0" name="ya-form-65dc6d6243f74f03b963527d" width="350"></iframe>
         </div>
       </div>
+
       <div class="popup" id="popup-form3">
         <div class="first-form">
           <div class="popup-img"><img  src="./img/img_1.jpg"></div>
@@ -181,8 +251,9 @@
                 <!-- <li><a href="" class="a">Производственные мощности</a></li> -->
                 <li><a href="#place" class="a">место проведения</a></li>
                 <li><a href="#date" class="a">дата проведения</a></li>
+                <li><a href="#time" class="a">расписание дня</a></li>
                 <li><a href="#chat" class="a">общий чат</a></li>
-                <li><a href="#quiz" class="a">ваш отклик</a></li>
+                <li><a href="#quiz" class="a">подтвердите присутствие</a></li>
                 <li><a href="#add" class="a">добавить в календарь</a></li>
             </ul>
             <div class="img-bottom">
@@ -198,6 +269,8 @@
     <script src="./js/maps.js"></script>
     <script src="./js/calendar.js"></script>
     <script src="./js/timerBack.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/tg.js"></script>
     
   </body>
 </html>
