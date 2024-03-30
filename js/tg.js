@@ -20,9 +20,12 @@ formSecond.addEventListener("submit", function(e) {
     .then(res => res.json())
     .then(data => {
         if (data.ok === true) {
-            formSecond.reset()
-            closePopup.click()
-    
+            anchorMesDontGo = true
+            visibleMesDontGo("success")
+            formSecond.reset()    
+        } else {
+            anchorMesDontGo = true
+            visibleMesDontGo("error")
         }
     })
 })
@@ -47,9 +50,13 @@ form.addEventListener("submit", function(e) {
         .then(res => res.json())
         .then(data => {
             if (data.ok === true) {
-                form.reset()
-                closePopup.click()
-        
+                anchorMessage = true;
+                // closePopup.click()
+                visibleMessage("success");
+                form.reset();
+            } else {
+                anchorMessage = true;
+                visibleMessage("error");
             }
         })
 })

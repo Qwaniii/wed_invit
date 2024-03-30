@@ -17,6 +17,8 @@ const popup = document.querySelector("#popup-form"),
       closePopup = document.querySelector(".popup-close"),
       body = document.body;
 
+      // блокировка скрола при открытие модального окна и возврат обратно
+
   function returnScroll() {
     document.querySelector('body').style.overflow = '';
     document.querySelector('html').style.overflow = '';
@@ -30,6 +32,7 @@ const popup = document.querySelector("#popup-form"),
     document.querySelector('html').style.height = '';
     document.body.style.position = '';
     document.body.style.left = '';
+    document.body.style.right = '';
     document.body.style.top = '';
 
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
@@ -43,6 +46,7 @@ const popup = document.querySelector("#popup-form"),
     
     document.body.style.position = 'fixed';
     document.body.style.left = '0';
+    document.body.style.right = '0';
 
     document.querySelector('body').style['scrollbar-gutter'] = 'stable';
     document.querySelector('html').style['scrollbar-gutter'] = 'stable';
@@ -53,6 +57,10 @@ const popup = document.querySelector("#popup-form"),
     document.querySelector('html').style['scroll-behavior'] = 'unset';
   }
 
+  // --------------------------------------------------------
+
+
+
 btn.addEventListener("click", (e) => {
   e.stopPropagation()
   e.preventDefault();
@@ -61,6 +69,8 @@ btn.addEventListener("click", (e) => {
     popup.parentElement.classList.add("active")
     stopScroll()
     window.history.pushState(null, null, '')
+    anchorMessage = false;
+    visibleMessage()
   }
 });
 
@@ -73,7 +83,8 @@ btnNot.addEventListener("click", (e) => {
     popup3.parentElement.classList.add("active")
     stopScroll()
     window.history.pushState(null, null, '')
-
+    anchorMesDontGo = false;
+    visibleMesDontGo()
   }
 });
 

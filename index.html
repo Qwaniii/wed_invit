@@ -110,7 +110,7 @@
             <div class="day-time__inner"><span>16:00</span><span class="empty-span"></span><span class="d-t-text">Свадебный ужин</span></div>
             <div class="day-time__inner"><span>19:00</span><span class="empty-span"></span><span class="d-t-text">Праздничный торт</span></div>
             <div class="day-time__inner"><span>21:00</span><span class="empty-span"></span><span class="d-t-text">Танцы</span></div>
-            <div class="day-time__inner"><span>23:00</span><span class="empty-span"></span><span class="d-t-text">Окончание вечер</span></div>
+            <div class="day-time__inner"><span>23:00</span><span class="empty-span"></span><span class="d-t-text">Окончание вечера</span></div>
           </section>
 
           <section class="chat" id="chat">
@@ -148,7 +148,19 @@
       <div class="popup" id="popup-form">
         <div class="first-form">
           <div class="popup-img"><img  src="./img/img_1.jpg"></div>
-          <div class="first-form-wrapper">
+          <div class="first-form-wrapper" id="success-message">
+            <div class="first-form__header">Спасибо!</div>
+            <div class="first-form__text" >
+              <p>Ваши ответы отправлены.</p>
+            </div>
+          </div>
+          <div class="first-form-wrapper" id="error-message">
+            <div class="first-form__header">Ошибка...</div>
+            <div class="first-form__text" >
+              <p>Сообщение не отправлено. Попробуйте еще раз.</p>
+            </div>
+          </div>
+          <div class="first-form-wrapper" id="main-form-visible">
             <div  class="first-form__header">Анкета гостя</div>
             <div class="first-form__text">
               <p>Мы хотим, чтобы свадьба прошла идеально не только для нас, но и для вас. Пожалуйста, заполните небольшой опросник по банкетному меню.</p>
@@ -229,8 +241,8 @@
         <div class="first-form">
           <div class="popup-img"><img  src="./img/img_1.jpg"></div>
           <div class="first-form-wrapper">
-            <div class="first-form__text"><p>Заполните, пожалуйста, форму, чтобы мы знали, что у вас не получится прийти.</p></div>
-            <form class="form" type="submit">
+            <div class="first-form__text"><p id="message-dont-go">Заполните, пожалуйста, форму, чтобы мы знали, что у вас не получится прийти.</p></div>
+            <form class="form" id="form-dont-go" type="submit">
               <div class="name-guest">
                 <label for="no-first-last-name">Ваше имя и фамилия</label>
                 <input id="no-first-last-name" type="text" name="name" required placeholder="Иван Николаев">
@@ -280,6 +292,7 @@
     <script src="./js/timerBack.js"></script>
     <script src="./js/api.js"></script>
     <script src="./js/tg.js"></script>
+    <script src="./js/message.js"></script>
     
   </body>
 </html>
