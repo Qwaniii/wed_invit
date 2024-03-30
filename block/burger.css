@@ -84,6 +84,7 @@
     top: 10px;
     cursor: pointer;
     transition: .3s;
+    z-index: 55;
   }
 
   .menu .menu-burger__header:hover {

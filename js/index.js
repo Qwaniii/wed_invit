@@ -9,13 +9,49 @@
 // });
 
 
-const popup = document.querySelector("#popup-form")
-const popup3 = document.querySelector("#popup-form3")
-const popupWrapper = document.querySelector(".popup__wrapper")
-const btn = document.querySelector(".done")
-const btnNot = document.querySelector(".btn-not")
-const closePopup = document.querySelector(".popup-close")
-const body = document.body
+const popup = document.querySelector("#popup-form"),
+      popup3 = document.querySelector("#popup-form3"),
+      popupWrapper = document.querySelector(".popup__wrapper"),
+      btn = document.querySelector(".done"),
+      btnNot = document.querySelector(".btn-not"),
+      closePopup = document.querySelector(".popup-close"),
+      body = document.body;
+
+  function returnScroll() {
+    document.querySelector('body').style.overflow = '';
+    document.querySelector('html').style.overflow = '';
+
+    document.querySelector('body').style['scrollbar-gutter'] = '';
+    document.querySelector('html').style['scrollbar-gutter'] = '';
+
+    
+    const scrollY = document.body.style.top;
+    
+    document.querySelector('html').style.height = '';
+    document.body.style.position = '';
+    document.body.style.left = '';
+    document.body.style.top = '';
+
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+    document.querySelector('html').style['scroll-behavior'] = '';
+  }
+
+  function stopScroll() {
+    document.body.style.top = `-${window.scrollY}px`;
+    document.querySelector('html').style.height = `${window.innerHeight - 1}px`;
+    
+    document.body.style.position = 'fixed';
+    document.body.style.left = '0';
+
+    document.querySelector('body').style['scrollbar-gutter'] = 'stable';
+    document.querySelector('html').style['scrollbar-gutter'] = 'stable';
+
+    document.querySelector('body').style.overflow = 'hidden';
+    document.querySelector('html').style.overflow = 'hidden';
+    
+    document.querySelector('html').style['scroll-behavior'] = 'unset';
+  }
 
 btn.addEventListener("click", (e) => {
   e.stopPropagation()
@@ -23,7 +59,7 @@ btn.addEventListener("click", (e) => {
   if(!popup.classList.contains("active")) {
     popup.classList.add("active");
     popup.parentElement.classList.add("active")
-    body.classList.add("popup-active")
+    stopScroll()
     window.history.pushState(null, null, '')
   }
 });
@@ -35,7 +71,7 @@ btnNot.addEventListener("click", (e) => {
   if(!popup3.classList.contains("active")) {
     popup3.classList.add("active");
     popup3.parentElement.classList.add("active")
-    body.classList.add("popup-active")
+    stopScroll()
     window.history.pushState(null, null, '')
 
   }
@@ -46,13 +82,13 @@ closePopup.addEventListener("click", (e) => {
   if (popup.classList.contains("active")){
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active")
-    body.classList.remove("popup-active")
+    returnScroll()
     window.history.back()
   };
   if (popup3.classList.contains("active")){
     popup3.classList.toggle("active");
     popup3.parentElement.classList.toggle("active")
-    body.classList.remove("popup-active")
+    returnScroll()
     window.history.back()
 
   };
@@ -67,12 +103,14 @@ window.addEventListener("popstate", (event) => {
   if (popup.classList.contains("active")){
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active")
-    body.classList.remove("popup-active")
+    returnScroll()
+
   }
   if (popup3.classList.contains("active")){
     popup3.classList.toggle("active");
     popup3.parentElement.classList.toggle("active")
-    body.classList.remove("popup-active")
+    returnScroll()
+
 
   };
 });
@@ -83,14 +121,14 @@ popupWrapper.addEventListener("click", function(e) {
   if (e.target.classList.contains("popup__wrapper") && popup.classList.contains("active")) {
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active");
-    body.classList.remove("popup-active")
+    returnScroll()
 
   }
 
   if (e.target.classList.contains("popup__wrapper") && popup3.classList.contains("active")) {
     popup3.classList.toggle("active");
     popup3.parentElement.classList.toggle("active");
-    body.classList.remove("popup-active")
+    returnScroll()
 
   }
 
@@ -100,7 +138,7 @@ document.addEventListener("keydown", (e) => {
   if(e.code == "Escape" && popup.classList.contains('active')) {
     popup.classList.toggle("active");
     popup.parentElement.classList.toggle("active");
-    body.classList.remove("popup-active")
+    returnScroll()
 
   }
 
@@ -108,7 +146,7 @@ document.addEventListener("keydown", (e) => {
   if(e.code == "Escape" && popup3.classList.contains('active')) {
     popup3.classList.toggle("active");
     popup3.parentElement.classList.toggle("active");
-    body.classList.remove("popup-active")
+    returnScroll()
 
   }
 })
