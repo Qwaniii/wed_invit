@@ -1,10 +1,12 @@
 .day-time {
     min-height: var(--minimal-height-block);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
     gap: 60px;
-    -webkit-gap: 60px;
     margin: 40px 0;
     box-sizing: border-box;
     justify-content: center;
@@ -27,12 +29,14 @@
     font-family: var(--font-family-text);
     font-size: 30px;
     font-weight: 600;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex: auto 100%;
     gap: 20px;
     opacity: 0;
     align-items: center;
-    transform: translateZ(0);
     transition: all .3s ease-in-out;
 
 }
@@ -74,7 +78,7 @@
 
 .img-time-start {
 
-    height: 80%;
+    height: 77%;
     width: 300px;
     position: absolute;
     top: 100px;
@@ -115,11 +119,16 @@
 
 @media (max-width: 600px) {
     .day-time {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
     }
 
     .day-time__inner {
         flex-direction: column;
         padding-left: 0;
+        gap: 10px;
+        margin-bottom: 40px;
     }
 
     .img-time-start {
