@@ -29,7 +29,7 @@
                       <h1 class="animate__animated animate__fadeInUp">27 июля 2024</h1> -->
             <img class="bird" src="./img/img_bird2.png">
             <h1 >Рады пригласить вас на нашу свадьбу!</h1>
-            <img class="ok" src="./img/OK-var10_new.png">
+            <img class="ok" src="./img/OK-var10_1.png">
             <h1 >27 июля 2024</h1>
         </div>
         <!-- <div class="img">
@@ -106,24 +106,32 @@
             <h1 id="time-h1">Расписание дня</h1>
             <div class="img-wrapper"></div>
             <img class="img-time-start" src="./img/myarr.png">
-            <div class="day-time__inner"><span id="first-time">15:00</span><span class="empty-span"></span><span class="d-t-text">Сбор гостей и фуршет</span></div>
-            <div class="day-time__inner"><span>16:00</span><span class="empty-span"></span><span class="d-t-text">Свадебный ужин</span></div>
-            <div class="day-time__inner"><span>19:00</span><span class="empty-span"></span><span class="d-t-text">Праздничный торт</span></div>
-            <div class="day-time__inner"><span>21:00</span><span class="empty-span"></span><span class="d-t-text">Танцы</span></div>
-            <div class="day-time__inner"><span>23:00</span><span class="empty-span"></span><span class="d-t-text">Окончание вечера</span></div>
+            <div class="day-time__inner"><span id="first-time"></span><span class="empty-span"></span><span class="d-t-text">Сбор гостей и фуршет</span></div>
+            <div class="day-time__inner"><span  id="second-time"></span><span class="empty-span"></span><span class="d-t-text">Свадебный ужин</span></div>
+            <div class="day-time__inner"><span  id="third-time"></span><span class="empty-span"></span><span class="d-t-text">Праздничный торт</span></div>
+            <div class="day-time__inner"><span  id="four-time"></span><span class="empty-span"></span><span class="d-t-text">Танцы</span></div>
+            <div class="day-time__inner"><span  id="five-time"></span><span class="empty-span"></span><span class="d-t-text">Окончание вечера</span></div>
           </section>
 
           <section class="chat" id="chat">
             <div class="chat-main">
               <h1 id="chat-h1">Общий чат</h1>
-              <p id="chat-text">Для вашего удобства мы создали чат в Telegram, куда можно будет добавлять фото со свадьбы. Давайте поделимся друг с другом счастливыми моментами этого важного дня и будем на связи!</p>
+              <p id="chat-text">Для вашего удобства мы создали чаты в Telegram и WhatsApp, куда можно будет добавлять фото со свадьбы и узнавать изменения. Давайте поделимся друг с другом счастливыми моментами этого важного дня и будем на связи!</p>
             </div>
-            <button class="btn" id="btn-telegram"><a target="_blank" href="https://t.me/+ZSwVwGIfAXI5OGZi">Вступить</a>
-              <div class="btn-wrap">
-                <div class="btn-effect">
+            <div class="btn-main-wrapper">
+              <button class="btn" id="btn-telegram"><a target="_blank" href="https://t.me/+ZSwVwGIfAXI5OGZi"><span class="inner-social"><img class="img-social" src="./img/tg_white.png"><span>группа</br>telegram</span></span></a>
+                <div class="btn-wrap">
+                  <div class="btn-effect">
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+              <button class="btn" id="btn-whatsapp"><a target="_blank" href="https://chat.whatsapp.com/JksiuBkDveyEBCcSRnOu6J"><span class="inner-social"><img class="img-social" src="./img/wa_white.png"><span>группа</br>whatsapp</span></span></a>
+                <div class="btn-wrap">
+                  <div class="btn-effect">
+                  </div>
+                </div>
+              </button>
+            </div>
           </section>
         </div>
           <section class="quiz" id="quiz">
@@ -231,7 +239,13 @@
                 <label for="first-last-name">Ваше имя и фамилия</label>
                 <input id="first-last-name" type="text" name="name" required placeholder="Иван Николаев">
               </div>
-              <input type="submit" id="submit" type="submit">
+              <div class="inp-btn">
+                <input type="submit" id="submit"  value="Отправить">
+                <div class="inp-wrap">
+                  <div class="inp-effect">
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
@@ -247,7 +261,13 @@
                 <label for="no-first-last-name">Ваше имя и фамилия</label>
                 <input id="no-first-last-name" type="text" name="name" required placeholder="Иван Николаев">
               </div>
-              <input type="submit" id="submit-second" type="submit">
+              <div class="inp-btn">
+                <input type="submit" id="submit-second"  value="Отправить">
+                <div class="inp-wrap">
+                  <div class="inp-effect">
+                  </div>
+                </div>
+              </div>
             </form>
         </div>
           <!-- <iframe src="https://forms.yandex.ru/u/65f2d27973cee767fd21d210/?iframe=1" frameborder="0" name="ya-form-65f2d27973cee767fd21d210" width="350"></iframe>         -->
@@ -293,6 +313,7 @@
     <script src="./js/api.js"></script>
     <script src="./js/tg.js"></script>
     <script src="./js/message.js"></script>
+    <script src="./js/animationTime.js"></script>
     
   </body>
 </html>

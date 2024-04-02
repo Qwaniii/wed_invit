@@ -2,7 +2,8 @@
 .start-view {
     position: relative;
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
     /* min-height: calc(var(--vh, 1vh) * 100); */
     display: flex;
     flex-direction: column;
@@ -24,7 +25,7 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    filter: brightness(1.2) opacity(.4);
+    filter: opacity(.7) hue-rotate(10deg);
     z-index: -1;
   }
 
@@ -189,6 +190,6 @@
 
 @supports (-webkit-touch-callout: none) {
     .start-view {
-      height: -webkit-fill-available;
+
     }
   }

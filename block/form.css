@@ -35,16 +35,19 @@
 }
 
 .popup-img::after {
-    content: "Олег & Ксения";
-    width: 100%;
-    font-size: 33px;
-    color: white;
-    font-weight: bolder;
+    /* content: "Олег & Ксения"; */
+    content: "";
+    width: 300px;
+    height: 300px;
+    /* font-size: 33px;
+    color: white; */
+    /* font-weight: bolder; */
+    background: center /100% no-repeat url(../img/img_form_1.png);
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    filter: drop-shadow(5px 5px 3px gray)
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    filter: drop-shadow(5px 5px 3px gray) opacity(.7)
 }
 
 .first-form__header {
@@ -263,6 +266,11 @@
     outline: none;
   }
 
+  input[type=text]:hover {
+    border: 2px solid #ff92aa;
+
+  }
+
   input[type=text]:active {
     border: 2px solid #ff92aa;
   }
@@ -288,6 +296,36 @@
     border: 2px solid #ff92aa;
 
   }
+
+  .inp-btn {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .inp-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-85px);
+    /* filter: blur(10) brightness(3); */
+    animation: buttonColor 2.5s ease-out infinite forwards;
+  }
+  
+  .inp-effect {
+    background: linear-gradient(90deg, #f2c4b948, #f3e6e248);
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -30px;
+    transform: skewX(-55deg);
+  }
+
+
 
   /* Сообщение об отправке данных */
 

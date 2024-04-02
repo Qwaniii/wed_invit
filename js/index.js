@@ -211,11 +211,13 @@ function updateScroll() {
   let chat = document.querySelector("#chat")
   let visibleChatMain = document.querySelector("#chat-h1");
   let visibleChatText = document.querySelector("#chat-text");
-  let visibleChatBtn = document.querySelector("#btn-telegram");
+  let visibleChatTgBtn = document.querySelector("#btn-telegram");
+  let visibleChatWaBtn = document.querySelector("#btn-whatsapp");
 
   windowBottomPosition >= chat.offsetTop + visibleChatMain.offsetTop ? visibleChatMain.style.animation = "var(--animation-scale) .3s forwards" : "none";
   windowBottomPosition >= chat.offsetTop + visibleChatText.offsetTop ? visibleChatText.style.animation = "var(--animation-block) 0.4s forwards" : "none";
-  windowBottomPosition >= chat.offsetTop + visibleChatBtn.offsetTop ? visibleChatBtn.style.animation = "var(--animation-scale) 0.5s forwards" : "none";
+  windowBottomPosition >= chat.offsetTop + visibleChatTgBtn.offsetTop ? visibleChatTgBtn.style.animation = "var(--animation-scale) 0.5s forwards" : "none";
+  windowBottomPosition >= chat.offsetTop + visibleChatWaBtn.offsetTop ? visibleChatWaBtn.style.animation = "var(--animation-scale) 0.7s forwards" : "none";
 
 
   // блок опроса
@@ -239,18 +241,35 @@ function updateScroll() {
       startTime = document.querySelector("#time"),
       timeH1 = document.querySelector("#time-h1"),
       firstTime = document.querySelector("#first-time"),
+      secondTime = document.querySelector("#second-time"),
+      thirdTime = document.querySelector("#third-time"),
+      fourTime = document.querySelector("#four-time"),
+      fiveTime = document.querySelector("#five-time"),
       allTime = document.querySelectorAll(".day-time__inner");
-
 
   windowBottomPosition >= startTime.offsetTop ? imgBack.style.animation = "inHeight 10s .3s ease-out forwards" : "none";
   windowBottomPosition >= startTime.offsetTop ? timeH1.style.animation = "var(--animation-scale) .1s forwards" : "none";
   if(windowBottomPosition >= startTime.offsetTop + firstTime.offsetTop)  {
     for (let i= 0 ; i < allTime.length; i++) {
-      allTime[i].style.animation = `var(--animation-block) ${i}.5s forwards`;
+      allTime[i].style.animation = `var(--animation-block) 0${i}.5s forwards`;
     }
   }
-
-
+  if(windowBottomPosition >= startTime.offsetTop +  firstTime.offsetTop && !animationInited) {
+    animationInited = true
+    increaseNumberAnimationStep(0, firstTime, 15)
+    setTimeout(function() {
+      increaseNumberAnimationStep(0, secondTime, 16)
+    }, 1500)
+    setTimeout(function() {
+      increaseNumberAnimationStep(0, thirdTime, 19)
+    }, 2500)
+    setTimeout(function() {
+      increaseNumberAnimationStep(0, fourTime, 21)
+    }, 3500)
+    setTimeout(function() {
+      increaseNumberAnimationStep(0, fiveTime, 23)
+    }, 4500)
+  }
 }
  
 window.addEventListener('scroll', updateScroll);

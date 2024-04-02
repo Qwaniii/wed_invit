@@ -35,6 +35,41 @@
   opacity: 0;
 }
 
+#btn-telegram {
+  background: linear-gradient(to top, #1891d1, #2faee7);
+  border: none;
+  filter: grayscale(.8) drop-shadow(0px 15px 25px transparent);
+}
+
+#btn-whatsapp {
+  background: linear-gradient(to top, #30b01f,  #55c83b);
+  border: none;
+  filter: grayscale(.8) drop-shadow(0px 15px 25px transparent);
+}
+
+#btn-telegram:hover,
+#btn-whatsapp:hover {
+  filter: grayscale(.2) drop-shadow(0px 15px 25px #dca393);
+  animation: social-animate .3s ease-in ;
+}
+
+.inner-social {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: var(--font-family-main);
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+
+}
+
+.img-social {
+  width: 40px;
+}
+
 @media (max-width: 849px) {
   .chat-main {
       padding: 0 20px;
@@ -46,4 +81,15 @@
     background: center /cover no-repeat url(../img/four.png);
     filter: brightness(1) opacity(0.3);
   }
+}
+
+@keyframes social-animate {
+  0%{
+    filter: grayscale(.8) drop-shadow(0px 15px 25px transparent);
+  }
+  
+  100%{
+    filter: grayscale(.2) drop-shadow(0px 15px 25px #dca393);
+  }
+
 }
