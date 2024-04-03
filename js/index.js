@@ -256,20 +256,33 @@ function updateScroll() {
   }
   if(windowBottomPosition >= startTime.offsetTop +  firstTime.offsetTop && !animationInited) {
     animationInited = true
-    increaseNumberAnimationStep(0, firstTime, 15)
-    setTimeout(function() {
-      increaseNumberAnimationStep(0, secondTime, 16)
-    }, 1500)
+    const firstTimeout = () => increaseNumberAnimationStep(0, firstTime, 15);
+    const secontTimeout = () => increaseNumberAnimationStep(0, secondTime, 16)
+    firstTimeout()
+    secontTimeout()
+  }
+
+  // function secontTimeout() {
+  //   setTimeout(function() {
+  //     increaseNumberAnimationStep(0, secondTime, 16)
+  //   }, 100)
+  // }
+  function thirdTimeout() {
     setTimeout(function() {
       increaseNumberAnimationStep(0, thirdTime, 19)
-    }, 2500)
+    }, 100)
+  }
+  function fourTimeout() {
     setTimeout(function() {
       increaseNumberAnimationStep(0, fourTime, 21)
-    }, 3500)
+    })
+  }
+  function fiveTimeout() {
     setTimeout(function() {
       increaseNumberAnimationStep(0, fiveTime, 23)
     }, 4500)
   }
+
 }
  
 window.addEventListener('scroll', updateScroll);
