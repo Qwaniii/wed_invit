@@ -13,7 +13,7 @@ ymaps.ready(init);
 
 function init(){
     let myMap = new ymaps.Map("map", {
-        center: [55.765802, 37.644561],
+        center: [55.784465, 37.672324],
         zoom: 15,
         controls: [],
         // type: null,
@@ -61,11 +61,11 @@ function init(){
 
     //создаем и добавляем метку нашего места
 
-    let ourPlace = [55.765802, 37.644561];
+    let ourPlace = [55.784465, 37.672324];
 
     let myPlacemark = new ymaps.Placemark(ourPlace, {
-        hintContent: 'Место проведения',
-        balloonContent: 'Ресторан <strong>Лучший</strong>'
+        hintContent: 'Альянс Бородино',
+        balloonContent: 'Ресторан "Давыдов" <strong>Русаковская улица, 13с5</strong>'
     }, {
         preset: 'islands#pinkHeartIcon',
     })
@@ -158,7 +158,10 @@ function init(){
 
     firstButton = new ymaps.control.Button({
         data: {content: "Такси"},
-        options: {selectOnClick: true}
+        options: {
+            selectOnClick: true,
+            maxWidth: 200
+        },
     });
 
     myMap.controls.add(firstButton, {position: {

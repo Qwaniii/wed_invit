@@ -1,4 +1,4 @@
-const INCREASE_NUMBER_ANIMATION_SPEED = 50;
+const INCREASE_NUMBER_ANIMATION_SPEED = 40;
 
 let animationInited = false;
 
@@ -25,7 +25,7 @@ function increaseNumberAnimationStep (i, element, endNumber, anchor) {
   setTimeout(function() {
     anchor = true
     i = 0
-    }, 1500)
+    }, 1700)
 
     function ready() {
       if(anchor && i <= 9) {

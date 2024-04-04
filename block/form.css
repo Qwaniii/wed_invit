@@ -99,6 +99,8 @@
   border: 2px solid #AAAAAA;
   transition: all 0.25s ease-out;
   cursor: pointer;
+  background-color: transparent;
+  color: var(--color-text)
 }
 
 #come:focus {
@@ -204,7 +206,7 @@
     background: #ff92aa;
   }
   
-  input[type=radio]:checked ~ label{
+  input[type=radio]:checked ~ label::first-letter{
     color: #ff92aa;
   }
 
@@ -254,7 +256,7 @@
     transform: rotate(45deg);
   }
   
-  input[type=checkbox]:checked ~ label{
+  input[type=checkbox]:checked ~ label::first-letter{
     color: #ff92aa;
   }
 

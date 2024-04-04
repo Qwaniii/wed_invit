@@ -259,16 +259,16 @@ function updateScroll() {
     increaseNumberAnimationStep(0, firstTime, 15, false);
     setTimeout(function() {
       increaseNumberAnimationStep(0, secondTime, 16, false)
-    }, 700)
+    }, 900)
     setTimeout(function() {
       increaseNumberAnimationStep(0, thirdTime, 19, false);
-    }, 1300)
+    }, 1500)
     setTimeout(function() {
       increaseNumberAnimationStep(0, fourTime, 21, false);
-    }, 1800)
+    }, 2000)
     setTimeout(function() {
       increaseNumberAnimationStep(0, fiveTime, 23, false);
-    }, 2200)
+    }, 2800)
   }
 }
  

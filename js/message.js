@@ -5,7 +5,8 @@ let successMessageVisible = document.querySelector("#success-message"),
     formDontGo = document.querySelector("#form-dont-go"),
     anchorMessage = false,
     anchorMesDontGo = false,
-    defaultMes = "Заполните, пожалуйста, форму, чтобы мы знали, что у вас не получится прийти.";
+    defaultMes = "Заполните, пожалуйста, форму, чтобы мы знали, что у вас не получится прийти.",
+    selectChange = document.querySelector("select")
 
     function visibleMessage(status) {
         if(anchorMessage === true && status === "success") {
@@ -34,6 +35,12 @@ let successMessageVisible = document.querySelector("#success-message"),
         }
 
     }
+
+    selectChange.addEventListener("change", function(e) {
+        console.log(e.target.value)
+    })
+
+    console.log(document.formName)
 
 
 
