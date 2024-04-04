@@ -89,7 +89,7 @@ button {
 
 .btn-main-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
   padding: 0 10px;

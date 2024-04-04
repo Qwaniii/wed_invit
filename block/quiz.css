@@ -12,6 +12,7 @@
 }
 
 .quiz-text {
+    display: block;
 }
 
 /* .quiz::after {

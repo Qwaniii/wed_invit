@@ -254,35 +254,22 @@ function updateScroll() {
       allTime[i].style.animation = `var(--animation-block) 0${i}.5s forwards`;
     }
   }
-  if(windowBottomPosition >= startTime.offsetTop +  firstTime.offsetTop && !animationInited) {
+  if(windowBottomPosition >= startTime.offsetTop + firstTime.offsetTop && !animationInited) {
     animationInited = true
-    const firstTimeout = () => increaseNumberAnimationStep(0, firstTime, 15);
-    const secontTimeout = () => increaseNumberAnimationStep(0, secondTime, 16)
-    firstTimeout()
-    secontTimeout()
-  }
-
-  // function secontTimeout() {
-  //   setTimeout(function() {
-  //     increaseNumberAnimationStep(0, secondTime, 16)
-  //   }, 100)
-  // }
-  function thirdTimeout() {
+    increaseNumberAnimationStep(0, firstTime, 15, false);
     setTimeout(function() {
-      increaseNumberAnimationStep(0, thirdTime, 19)
-    }, 100)
-  }
-  function fourTimeout() {
+      increaseNumberAnimationStep(0, secondTime, 16, false)
+    }, 700)
     setTimeout(function() {
-      increaseNumberAnimationStep(0, fourTime, 21)
-    })
-  }
-  function fiveTimeout() {
+      increaseNumberAnimationStep(0, thirdTime, 19, false);
+    }, 1300)
     setTimeout(function() {
-      increaseNumberAnimationStep(0, fiveTime, 23)
-    }, 4500)
+      increaseNumberAnimationStep(0, fourTime, 21, false);
+    }, 1800)
+    setTimeout(function() {
+      increaseNumberAnimationStep(0, fiveTime, 23, false);
+    }, 2200)
   }
-
 }
  
 window.addEventListener('scroll', updateScroll);

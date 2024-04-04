@@ -38,13 +38,13 @@
 #btn-telegram {
   background: linear-gradient(to top, #1891d1, #2faee7);
   border: none;
-  filter: grayscale(.8) drop-shadow(0px 15px 25px transparent);
+  filter: grayscale(.7) drop-shadow(0px 15px 25px transparent) hue-rotate(90deg);
 }
 
 #btn-whatsapp {
   background: linear-gradient(to top, #30b01f,  #55c83b);
   border: none;
-  filter: grayscale(.8) drop-shadow(0px 15px 25px transparent);
+  filter: grayscale(.7) drop-shadow(0px 15px 25px transparent) hue-rotate(180deg);
 }
 
 #btn-telegram:hover,
@@ -81,11 +81,15 @@
     background: center /cover no-repeat url(../img/four.png);
     filter: brightness(1) opacity(0.3);
   }
+
+  .inner-social {
+    line-height: 1;
+  }
 }
 
 @keyframes social-animate {
   0%{
-    filter: grayscale(.8) drop-shadow(0px 15px 25px transparent);
+    filter: grayscale(.9) drop-shadow(0px 15px 25px transparent);
   }
   
   100%{
