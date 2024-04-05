@@ -85,7 +85,18 @@
 
 .form-come {
   width: 100%;
+  position: relative;
+}
 
+.form-come:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  border: 2px solid var(--color-text);
+  opacity: .7;
 }
 
 #come {
@@ -100,8 +111,9 @@
   transition: all 0.25s ease-out;
   cursor: pointer;
   background-color: transparent;
-  color: var(--color-text)
+  color: var(--color-text);
 }
+
 
 #come:focus {
   border: 2px solid #ff92aa;

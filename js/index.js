@@ -256,18 +256,18 @@ function updateScroll() {
   }
   if(windowBottomPosition >= startTime.offsetTop + firstTime.offsetTop && !animationInited) {
     animationInited = true
-    increaseNumberAnimationStep(0, firstTime, 15, false);
+    increaseNumberAnimationStep(0, firstTime, 15, false, "30");
     setTimeout(function() {
-      increaseNumberAnimationStep(0, secondTime, 16, false)
+      increaseNumberAnimationStep(0, secondTime, 16, false, "00")
     }, 900)
     setTimeout(function() {
-      increaseNumberAnimationStep(0, thirdTime, 19, false);
+      increaseNumberAnimationStep(0, thirdTime, 19, false, "00");
     }, 1500)
     setTimeout(function() {
-      increaseNumberAnimationStep(0, fourTime, 21, false);
+      increaseNumberAnimationStep(0, fourTime, 21, false, "00");
     }, 2000)
     setTimeout(function() {
-      increaseNumberAnimationStep(0, fiveTime, 23, false);
+      increaseNumberAnimationStep(0, fiveTime, 23, false, "00");
     }, 2800)
   }
 }

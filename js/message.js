@@ -6,7 +6,10 @@ let successMessageVisible = document.querySelector("#success-message"),
     anchorMessage = false,
     anchorMesDontGo = false,
     defaultMes = "Заполните, пожалуйста, форму, чтобы мы знали, что у вас не получится прийти.",
-    selectChange = document.querySelector("select")
+    selectChange = document.querySelector("select"),
+    inpRadio = document.querySelectorAll(".inp-radio"),
+    inpRadioInside = document.querySelectorAll(".inside"),
+    selectEat = document.querySelector("#selectEat");
 
     function visibleMessage(status) {
         if(anchorMessage === true && status === "success") {
@@ -24,7 +27,7 @@ let successMessageVisible = document.querySelector("#success-message"),
 
     function visibleMesDontGo(status) {
         if(anchorMesDontGo === true && status === "success") {
-            messageDontGo.innerText = "Спасибо. Увидимся в следующий раз!";
+            messageDontGo.innerText = "Спасибо!";
             formDontGo.style.display = "none"
         } else if(anchorMesDontGo === true && status === "error") {
             messageDontGo.innerText = "Ошибка... Сообщение не отправлено. Попробуйте еще раз";
@@ -36,11 +39,33 @@ let successMessageVisible = document.querySelector("#success-message"),
 
     }
 
+
     selectChange.addEventListener("change", function(e) {
-        console.log(e.target.value)
+        if(e.target.value === "Буду с парой / семьей") {
+            for (let i=0; i < inpRadio.length; i++) {
+                inpRadio[i].type = "checkbox"
+            }
+            for (let i=0; i< inpRadioInside.length; i++) {
+                inpRadioInside[i].classList.remove("check")
+                inpRadioInside[i].classList.add("select")
+            }
+            selectEat.innerText = "Какие блюда предпочитаете?"
+        } else {
+            for (let i=0; i < inpRadio.length; i++) {
+                inpRadio[i].type = "radio"
+            }
+            for (let i=0; i< inpRadioInside.length; i++) {
+                inpRadioInside[i].classList.add("check")
+                inpRadioInside[i].classList.remove("select")
+            }
+            selectEat.innerText = "Какое блюдо предпочитаете?"
+
+        }
+
     })
 
-    console.log(document.formName)
+
+
 
 
 

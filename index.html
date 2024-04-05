@@ -64,8 +64,7 @@
                   Место проведения
               </h1>
               <p class="place__text">
-                  Дворец бракосочетания N1
-                  Малый Харитоньевский
+                Альянс Бородино - Ресторан "Давыдов"
               </p>
               <!-- <div class="place__button">
                   <a class="place__button-link" href="https://yandex.ru/profile/1241193732?no-distribution=1&amp;source=wizbiz_new_map_single" target="_blank" rel="noopener">Открыть карту</a>
@@ -176,33 +175,33 @@
             <!-- <iframe src="https://forms.yandex.ru/u/65dc6d6243f74f03b963527d/?iframe=1" frameborder="0" name="ya-form-65dc6d6243f74f03b963527d" width="350"></iframe> -->
             <form class="form" type="submit">
               <div class="form-come">
-                <select id="come">
+                <select name="select" id="come">
                   <option value="Приду один">Приду один</option>
-                  <option value="Буду с парой / с семьей">Буду с парой / с семьей</option>
+                  <option value="Буду с парой / семьей">Буду с парой / семьей</option>
                 </select>
               </div>
               <div class="form-food wrapperOuter">
-                <p>Какие блюда предпочитаете?</p>
+                <p id="selectEat">Какое блюдо предпочитаете?</p>
                 <ul>
                   <li>
-                    <input type="radio" id="meat" name="food" value="Блюдо из мяса">
+                    <input class="inp-radio" type="radio" id="meat" name="food" value="Блюдо из мяса">
                     <label for="meat">Блюдо из мяса</label>
                     
-                    <div class="check"></div>
+                    <div class="check inside"></div>
                   </li>
                   
                   <li>
-                    <input type="radio" id="fish" name="food" value="Блюдо из рыбы">
+                    <input class="inp-radio"  type="radio" id="fish" name="food" value="Блюдо из рыбы">
                     <label for="fish">Блюдо из рыбы</label>
                     
-                    <div class="check"><div class="inside"></div></div>
+                    <div class="check inside"></div>
                   </li>
                   
                   <li>
-                    <input type="radio" id="just" name="food" value="Вегетарианское блюдо">
+                    <input class="inp-radio"  type="radio" id="just" name="food" value="Вегетарианское блюдо">
                     <label for="just">Вегетарианское блюдо</label>
               
-                    <div class="check"><div class="inside"></div></div>
+                    <div class="check inside"></div>
                   </li>
                 </ul>
               </div>

@@ -17,36 +17,40 @@ formSecond.addEventListener("submit", function(e) {
         }
 
     api.sendMessage(`Не получится прийти%0A`, nameToCancelSent)
-    .then(res => res.json())
-    .then(data => {
-        if (data.ok === true) {
-            anchorMesDontGo = true
-            visibleMesDontGo("success")
-            formSecond.reset()    
-        } else {
-            anchorMesDontGo = true
-            visibleMesDontGo("error")
-        }
-    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.ok === true) {
+                anchorMesDontGo = true
+                visibleMesDontGo("success")
+                formSecond.reset()    
+            } else {
+                anchorMesDontGo = true
+                visibleMesDontGo("error")
+            }
+        })
 })
 
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
-    let bodyIn = "Хотим кушать ";
-    let bodyDrink = "Хотим пить ";
+    let bodyIn = "Предпочитаем блюдо ";
+    let bodyDrink = "Предпочитаем алкоголь ";
+    let aloneMan = ""
     for (let i = 0; i < form.length; i++) {
+        if(form[i].name === "select") {
+            aloneMan = form[i].value
+        }
     
         if(form[i].checked) {
-            form[i].type === "radio" ? bodyIn += `%0A` + form[i].value.toString() : bodyDrink += `%0A` + form[i].value.toString()
-        }
+            form[i].name === "food" ? bodyIn += `%0A` + form[i].value.toString() : bodyDrink += `%0A` + form[i].value.toString()
+        }  
         
         if(form[i].name === "name") {
             nameToSent += form[i].value
         }
     }
 
-    api.sendMessage(`Анкета гостя%0A`, bodyIn + `%0A%0A` + bodyDrink + `%0A%0A` +  nameToSent)
+    api.sendMessage(`Анкета гостя%0A`, nameToSent + `%0A` + aloneMan + `%0A%0A` + bodyIn + `%0A%0A` + bodyDrink)
         .then(res => res.json())
         .then(data => {
             if (data.ok === true) {
