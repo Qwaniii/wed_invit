@@ -330,11 +330,32 @@ function init(){
     routePanelControlAuto.routePanel.getRouteAsync().then(function (route) {
         // Зададим максимально допустимое число маршрутов, возвращаемых мультимаршрутизатором.
         route.model.setParams({results: 1}, true);
-        // Повесим обработчик на событие построения маршрута.
+        route.options.set({
+            wayPointStartIconColor: "#333",
+            wayPointStartIconFillColor: "#ff6614",
+            routeActiveStrokeWidth: 8,
+            routeActiveStrokeColor: "#ffbb80",
+            wayPointFinishIconLayout: "default#image",
+            wayPointFinishIconImageHref: "./img/done.png",
+            wayPointFinishIconImageSize: [30, 30],
+            wayPointFinishIconImageOffset: [-15, -15],
+            routeActivePedestrianSegmentStrokeStyle: "solid",
+            routeActivePedestrianSegmentStrokeColor: "#a1a1a1",
+        });
     })
 
     routePanelControlTaxi.routePanel.getRouteAsync().then(function (route) {
         route.model.setParams({results: 1}, true);
+        route.options.set({
+            wayPointStartIconColor: "#333",
+            wayPointStartIconFillColor: "#ff6614",
+            routeActiveStrokeWidth: 8,
+            routeActiveStrokeColor: "#ffbb80",
+            wayPointFinishIconLayout: "default#image",
+            wayPointFinishIconImageHref: "./img/done.png",
+            wayPointFinishIconImageSize: [30, 30],
+            wayPointFinishIconImageOffset: [-15, -15],
+        });
     })
     // myPlacemark.balloon.open()
 }
