@@ -62,9 +62,7 @@ form.addEventListener("submit", function(e) {
                     inpRadioInside[i].classList.add("check")
                     inpRadioInside[i].classList.remove("select")
                 }
-                setTimeout(function() {
-                    closePopup.click()
-            }, 3000)
+                nameGuest.previousElementSibling.innerText = "Ваше имя и фамилия"
             } else {
                 anchorMessage = true;
                 visibleMessage("error");

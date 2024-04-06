@@ -50,6 +50,7 @@ let successMessageVisible = document.querySelector("#success-message"),
                 inpRadioInside[i].classList.add("select")
             }
             selectEat.innerText = "Какие блюда предпочитаете?"
+            nameGuest.previousElementSibling.innerText = "Ваши имена и фамилии"
         } else {
             for (let i=0; i < inpRadio.length; i++) {
                 inpRadio[i].type = "radio"
@@ -59,7 +60,7 @@ let successMessageVisible = document.querySelector("#success-message"),
                 inpRadioInside[i].classList.remove("select")
             }
             selectEat.innerText = "Какое блюдо предпочитаете?"
-
+            nameGuest.previousElementSibling.innerText = "Ваше имя и фамилия"
         }
 
     })

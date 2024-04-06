@@ -4,7 +4,7 @@
     min-height: var(--minimal-height-block);
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -22,6 +22,8 @@
     font-size: var(--font-text);
     font-family: var(--font-family-other);
     opacity: 0;
+    margin: 0;
+    line-height: 2;
 }
 
 #map {
@@ -55,6 +57,12 @@
 @media (max-width: 849px) {
     .place__main,
     .place__text {
-        padding: 0 20px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .place__text {
+       font-size: 18px;
     }
 }

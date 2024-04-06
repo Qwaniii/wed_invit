@@ -14,7 +14,7 @@ ymaps.ready(init);
 function init(){
     let myMap = new ymaps.Map("map", {
         center: [55.784465, 37.672324],
-        zoom: 15,
+        zoom: 14,
         controls: [],
         // type: null,
         // behaviors: ["drag", "dblClickZoom", "multiTouch"]  
@@ -65,7 +65,7 @@ function init(){
 
     let myPlacemark = new ymaps.Placemark(ourPlace, {
         hintContent: 'Альянс Бородино',
-        balloonContent: 'Ресторан "Давыдов" <strong>Русаковская улица, 13с5</strong>'
+        balloonContent: '<span style="font-weight: 300; font-style: italic">Ресторан <strong>"Давыдов"</strong><br>Адрес: Русаковская улица, 13с5</span>'
     }, {
         preset: 'islands#pinkHeartIcon',
     })
@@ -97,10 +97,10 @@ function init(){
                 color: "white",
                 display: "flex",
                 justifyContent: "center",
-                fontSize: "20px",
-                fontFamily: "Arial,sans-serif",
+                fontSize: "22px",
+                fontFamily: "Cormorant Infant,Arial,sans-serif",
                 opacity: "0.0",
-                padding: "25px",
+                padding: "32px",
                 textAlign: "center",
                 transition: "opacity .3s",
                 touchAction: "auto"
@@ -148,7 +148,7 @@ function init(){
     // myMap.events.add("mousemove", function(e) {
         //     myMap.hint.show(e.get('coordPosition'), 'Кто-то щелкнул правой кнопкой');
         // })
-    myMap.copyrights.add('© Олег и Ксения = ОК');
+    myMap.copyrights.add('© ОК');
 
     hideButton = new ymaps.control.Button({
         data: {content: "Скрыть"},
@@ -157,7 +157,7 @@ function init(){
     hideButton.select()
 
     firstButton = new ymaps.control.Button({
-        data: {content: "Такси"},
+        data: {content: "На  такси"},
         options: {
             selectOnClick: true,
             maxWidth: 200
@@ -327,6 +327,15 @@ function init(){
     routePanelControlTaxi.routePanel.geolocate('from');
     routePanelControlAuto.routePanel.geolocate('from');
 
+    routePanelControlAuto.routePanel.getRouteAsync().then(function (route) {
+        // Зададим максимально допустимое число маршрутов, возвращаемых мультимаршрутизатором.
+        route.model.setParams({results: 1}, true);
+        // Повесим обработчик на событие построения маршрута.
+    })
+
+    routePanelControlTaxi.routePanel.getRouteAsync().then(function (route) {
+        route.model.setParams({results: 1}, true);
+    })
     // myPlacemark.balloon.open()
 }
 

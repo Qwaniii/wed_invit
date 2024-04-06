@@ -187,11 +187,14 @@ function updateScroll() {
   let visibleMap = document.querySelector("#map")
   let mapOffset = visibleMap.offsetTop;
   let visiblePlace = document.querySelector(".place__main")
-  let visiblePlaceText = document.querySelector(".place__text")
+  let visiblePlaceText = document.querySelectorAll(".place__text")
 
   windowBottomPosition >= visiblePlace.offsetTop ? visiblePlace.style.animation = "var(--animation-scale) .3s forwards" : "none";
-  windowBottomPosition >= visiblePlaceText.offsetTop ? visiblePlaceText.style.animation = "var(--animation-block) 0.4s forwards" : "none";
-  windowBottomPosition >= mapOffset ? visibleMap.style.animation = "var(--animation-block) .5s forwards" : "none";
+  windowBottomPosition >= mapOffset ? visibleMap.style.animation = "var(--animation-block) 1.5s forwards" : "none";
+  if(windowBottomPosition >= visiblePlaceText[0].offsetTop) {
+    for (let i=0; i< visiblePlaceText.length; i++)
+    visiblePlaceText[i].style.animation = `var(--animation-block) ${0.3 + i}s forwards`
+  } 
 
 
   // блок дата
@@ -251,7 +254,7 @@ function updateScroll() {
   windowBottomPosition >= startTime.offsetTop ? timeH1.style.animation = "var(--animation-scale) .1s forwards" : "none";
   if(windowBottomPosition >= startTime.offsetTop + firstTime.offsetTop)  {
     for (let i= 0 ; i < allTime.length; i++) {
-      allTime[i].style.animation = `var(--animation-block) 0${i}.5s forwards`;
+      allTime[i].style.animation = `var(--animation-block) ${i}.5s forwards`;
     }
   }
   if(windowBottomPosition >= startTime.offsetTop + firstTime.offsetTop && !animationInited) {
