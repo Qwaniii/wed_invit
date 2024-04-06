@@ -55,9 +55,16 @@ form.addEventListener("submit", function(e) {
         .then(data => {
             if (data.ok === true) {
                 anchorMessage = true;
-                // closePopup.click()
                 visibleMessage("success");
                 form.reset();
+                nameToSent = "Имя: "
+                for (let i=0; i< inpRadioInside.length; i++) {
+                    inpRadioInside[i].classList.add("check")
+                    inpRadioInside[i].classList.remove("select")
+                }
+                setTimeout(function() {
+                    closePopup.click()
+            }, 3000)
             } else {
                 anchorMessage = true;
                 visibleMessage("error");

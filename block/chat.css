@@ -38,13 +38,13 @@
 #btn-telegram {
   background: linear-gradient(to top, #1891d1, #2faee7);
   border: none;
-  filter: grayscale(.7) drop-shadow(0px 15px 25px transparent) hue-rotate(90deg);
+  filter: grayscale(.7) drop-shadow(0px 15px 25px transparent) hue-rotate(145deg);
 }
 
 #btn-whatsapp {
   background: linear-gradient(to top, #30b01f,  #55c83b);
   border: none;
-  filter: grayscale(.7) drop-shadow(0px 15px 25px transparent) hue-rotate(180deg);
+  filter: grayscale(.7) drop-shadow(0px 15px 25px transparent) hue-rotate(240deg);
 }
 
 #btn-telegram:hover,

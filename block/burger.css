@@ -175,6 +175,40 @@
   .menu .topmenu > li:not(:last-child) {
     margin-bottom: 1em;
   }
+
+  .share {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: var(--color-text);
+    font-family: var(--color-text);
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 25px;
+  }
+
+  .share-img {
+    vertical-align: middle;
+    width: 25px;
+    cursor: pointer;
+    height: 100%;
+    background: linear-gradient(to top, #30b01f,  #55c83b);
+    border-radius: 5px;
+    padding: 3px;
+    transform: scale(1);
+    transition: transform .3s;
+  }
+
+  .share-img:hover {
+    transform: scale(1.2);
+    border-radius: 3px;
+
+  }
   
   @media (max-width: 450px) {
     .menu {
