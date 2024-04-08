@@ -14,8 +14,23 @@
 .place__main {
     font-size: var(--font-first);
     opacity: 0;
+    position: relative;
 }
 
+
+
+.place__main::after {
+    content: "";
+    background: center /cover no-repeat url(../img/test3.png);
+    position: absolute;
+    width: 700px;
+    height: 150px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    filter: brightness(1.1) opacity(.7) hue-rotate(-10deg);
+}
 
 
 .place__text {

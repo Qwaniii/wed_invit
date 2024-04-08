@@ -189,7 +189,7 @@
     z-index: 5;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
     color: var(--color-text);
     font-family: var(--color-text);
     font-size: 1em;
@@ -208,6 +208,7 @@
     padding: 3px;
     transform: scale(1);
     transition: transform .3s;
+    margin: 0 10px;
   }
 
   .share-tg {

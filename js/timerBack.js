@@ -1,4 +1,4 @@
-const ourDate = new Date(2024, 06, 27, 17, 00, 00).getTime()
+const ourDate = new Date(2024, 06, 27, 15, 30, 00).getTime()
 
 const timerDays = document.querySelector("#days");
 const timerHours = document.querySelector("#hours");
@@ -19,7 +19,8 @@ let timer = setInterval(function() {
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    timerDays.innerHTML = days < 10 ? "0" + days : days
+    if (distance > 0){    
+        timerDays.innerHTML = days < 10 ? "0" + days : days
     timerHours.innerHTML = hours < 10 ? "0" + hours : hours
     timerMinutes.innerHTML = minutes < 10 ? "0" + minutes : minutes
     timerSeconds.innerHTML = seconds < 10 ? "0" + seconds : seconds
@@ -28,13 +29,14 @@ let timer = setInterval(function() {
     endMin.innerHTML = declOfNum(minutes, ["минута", "минуты", "минут" ])
     endHour.innerHTML = declOfNum(hours, ["час", "часа", "часов" ])
     endDay.innerHTML = declOfNum(days, ["день", "дня", "дней" ])
+    }
 
-    if(distance < 0) {
+    if(distance <= 0) {
         clearInterval(timer);
-        timerDays.innerHTML = 0
-        timerHours.innerHTML = 0
-        timerMinutes.innerHTML = 0
-        timerSeconds.innerHTML = 0
+        timerDays.innerHTML = '00'
+        timerHours.innerHTML = '00'
+        timerMinutes.innerHTML = '00'
+        timerSeconds.innerHTML = '00'
     }
 
 }, 1000)
