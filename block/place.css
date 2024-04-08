@@ -80,4 +80,9 @@
     .place__text {
        font-size: 18px;
     }
+
+    .place__main::after {
+        content: "";
+        background: center /80% no-repeat url(../img/test3.png);
+    }    
 }

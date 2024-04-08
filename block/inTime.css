@@ -136,12 +136,23 @@
         margin-bottom: 40px;
     }
 
-    .img-time-start {
+    /* .img-time-start {
         height: 90%;
 
         filter: opacity(.1) brightness(1) blur() hue-rotate(-65deg);
-    }
+    } */
     
+    .img-time-start {
+        object-fit: cover;
+        height: 95%;
+        width: 300px;
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -2;
+        filter: opacity(.1) brightness(1.3) blur() hue-rotate(30deg);
+    }
 
 
 }

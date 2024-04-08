@@ -39,6 +39,7 @@
 #dateh1 {
     font-size: var(--font-first);
     opacity: 0;
+    margin-bottom: 60px;
 }
 
 #date p {
@@ -52,7 +53,6 @@
     font-size: var(--font-text);
     text-align: center;
     opacity: 0;
-    position: relative;
 }
 
 
@@ -166,10 +166,18 @@
 }
 
   @media (max-width: 600px) {
-    #date::after {
+    /* #date::after {
       background: center /cover no-repeat url(../img/second.png);
       filter: brightness(1) opacity(.2);
     
+    } */
+
+    #date::after {
+      content: "";
+      background: center /115% no-repeat url(../img/test2.png);
+      top: 10px;
+      right: 0px;
+      left: 20px;
     }
   }
 

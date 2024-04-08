@@ -91,9 +91,14 @@
 }
 
 @media (max-width: 600px) {
-  .chat::after {
+  /* .chat::after {
     background: center /cover no-repeat url(../img/four.png);
     filter: brightness(1) opacity(0.3);
+  } */
+
+  #chat-h1::after{
+    background: center /80% no-repeat url(../img/test4.png);
+
   }
 
   .inner-social {
