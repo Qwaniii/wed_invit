@@ -1,6 +1,7 @@
 class Api {
     constructor() {
-        this.url = "https://api.telegram.org/bot7063713067:AAEOTHGN_x-StvgR7SGEUxcxTBOJKg6qXgs/sendMessage?chat_id=5200592838&text=";
+        // this.url = "https://api.telegram.org/bot7063713067:AAEOTHGN_x-StvgR7SGEUxcxTBOJKg6qXgs/sendMessage?chat_id=5200592838&text=";
+        this.url = "https://api.telegram.org/bot7063713067:AAEOTHGN_x-StvgR7SGEUxcxTBOJKg6qXgs/sendMessage?chat_id=-1002131519980&text=";
     }
 
     sendMessage(name, body) {
