@@ -13,14 +13,14 @@
 
 #date::after {
   content: "";
-  background: center /80% no-repeat url(../img/second.png);
+  background: center /70% no-repeat url(../img/second.png);
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
   z-index: -1;
-  filter: brightness(1) opacity(.4);
+  filter: brightness(1) opacity(.3);
 }
 
 
@@ -70,14 +70,21 @@
 }
 
 #add {
+  margin-top: auto;
   opacity: 0;
-  font-size: var(--font-text);
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .add-to>a>img {
     width: 30px;
     height: 30px;
     padding-right: 7px ;
+    transition: all .3s;
+}
+
+.add-to>a>img:hover {
+  filter: drop-shadow(0px 1px 1px #fca292);
 }
 
 @-webkit-keyframes heartBeat {
@@ -146,7 +153,8 @@
 
 
   @media (max-width: 849px) {
-    #dateh1 {
+    #dateh1,
+    #calendar1 {
         padding: 0 20px;
     }
 }
