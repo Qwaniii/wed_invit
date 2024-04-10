@@ -98,9 +98,10 @@ function init(){
                 display: "flex",
                 justifyContent: "center",
                 fontSize: "22px",
+                fontWeight: "bold",
                 fontFamily: "Cormorant Infant,Arial,sans-serif",
                 opacity: "0.0",
-                padding: "32px",
+                padding: "30px",
                 textAlign: "center",
                 transition: "opacity .3s",
                 touchAction: "auto"

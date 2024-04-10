@@ -51,6 +51,7 @@
     font-size: var(--font-text);
     font-family: var(--font-family-other);
     opacity: 0;
+    line-height: 1.3;
 }
 
 .btn-not {
@@ -73,6 +74,12 @@
     background-color: rgba(128, 128, 128, 0.1);
     border: 1px solid transparent;
   }
+
+@media (max-width: 849px) {
+.quiz-text {
+    padding: 0 20px;
+}
+}
 
 
 @media (max-width: 600px) {

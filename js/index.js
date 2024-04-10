@@ -207,7 +207,7 @@ function updateScroll() {
 
   windowBottomPosition >= date.offsetTop + visibleDate.offsetTop ? visibleDate.style.animation = "var(--animation-scale) .3s forwards" : "none";
   windowBottomPosition >= date.offsetTop + visibleCalendar.offsetTop ? visibleCalendar.style.animation = "var(--animation-block) 0.5s forwards" : "none";
-  windowBottomPosition >= date.offsetTop + visibleAddToCalendar.offsetTop ? visibleAddToCalendar.style.animation = "var(--animation-block) 0.6s forwards" : "none";
+  windowBottomPosition >= date.offsetTop + visibleAddToCalendar.offsetTop - 100 ? visibleAddToCalendar.style.animation = "var(--animation-block) 0.6s forwards" : "none";
 
   // блок телеграм
 

@@ -51,6 +51,7 @@ let successMessageVisible = document.querySelector("#success-message"),
             }
             selectEat.innerText = "Какие блюда предпочитаете?"
             nameGuest.previousElementSibling.innerText = "Ваши имена и фамилии"
+            nameGuest.placeholder = "Иван Николаев, Ольга Николаева"
         } else {
             for (let i=0; i < inpRadio.length; i++) {
                 inpRadio[i].type = "radio"
@@ -61,6 +62,7 @@ let successMessageVisible = document.querySelector("#success-message"),
             }
             selectEat.innerText = "Какое блюдо предпочитаете?"
             nameGuest.previousElementSibling.innerText = "Ваше имя и фамилия"
+            nameGuest.placeholder = "Иван Николаев"
         }
 
     })

@@ -58,11 +58,18 @@ form.addEventListener("submit", function(e) {
                 visibleMessage("success");
                 form.reset();
                 nameToSent = "Имя: "
-                for (let i=0; i< inpRadioInside.length; i++) {
-                    inpRadioInside[i].classList.add("check")
-                    inpRadioInside[i].classList.remove("select")
+                if(inpRadio[0].type = "checkbox") {
+                    for (let i=0; i < inpRadio.length; i++) {
+                        inpRadio[i].type = "radio"
+                    }
+                    for (let i=0; i< inpRadioInside.length; i++) {
+                        inpRadioInside[i].classList.add("check")
+                        inpRadioInside[i].classList.remove("select")
+                    }
+                    selectEat.innerText = "Какое блюдо предпочитаете?"
+                    nameGuest.previousElementSibling.innerText = "Ваше имя и фамилия"
+                    nameGuest.placeholder = "Иван Николаев"
                 }
-                nameGuest.previousElementSibling.innerText = "Ваше имя и фамилия"
             } else {
                 anchorMessage = true;
                 visibleMessage("error");

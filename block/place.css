@@ -8,7 +8,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 .place__main {
@@ -24,6 +23,14 @@
     opacity: 0;
     margin: 0;
     line-height: 2;
+}
+
+.place__text>a {
+    transition: all .2s ease-in-out;
+}
+
+.place__text>a:hover {
+    color: rgba(0, 0, 0, 0.8);
 }
 
 #map {
