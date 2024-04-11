@@ -42,6 +42,9 @@
     opacity: 0;
 }
 
+#dear-text {
+    line-height: 1.6;
+}
 
 
 @media (max-width: 849px) {
@@ -55,5 +58,9 @@
     .family-text::after {
         background: center /cover no-repeat url(../img/third.png);
         filter: brightness(1.3) opacity(.2);
+    }
+
+    #dear-text {
+        line-height: 1.2;
     }
 }

@@ -33,6 +33,7 @@
   font-size: var(--font-text);
   font-family: var(--font-family-other);
   opacity: 0;
+  line-height: 1.6;
 }
 
 #btn-telegram {
@@ -84,6 +85,10 @@
 
   .inner-social {
     line-height: 1;
+  }
+
+  #chat-text {
+    line-height: 1.3;
   }
 }
 
