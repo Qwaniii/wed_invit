@@ -185,8 +185,10 @@
     }
 
     .start-view__container h1 {
-        font-family: var(--font-family-pacifico);
-        font-size: 20px;
+        /* font-family: var(--font-family-pacifico); */
+        font-family: "Bad Script";
+
+        font-size: 22px;
         /* transform: scale(1, 2); */
         letter-spacing: .5px;
     }

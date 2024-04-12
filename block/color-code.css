@@ -42,15 +42,9 @@
 .color-img {
     width: 150px;
     opacity: 0;
-    filter: blur(0.7px);
     transition: all .25s ease-in;
 }
 
-.color-img:hover {
-    scale: 2;
-    z-index: 2;
-    filter: blur(0px);
-}
 
 @media (max-width: 600px) {
     .color-wedding {
