@@ -25,7 +25,9 @@
 
 
 #dateh1 {
-    font-size: var(--font-first);
+  font-size: var(--font-marks);
+  font-family: var(--font-family-marks);
+  font-weight: 400;
     opacity: 0;
 }
 

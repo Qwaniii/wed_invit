@@ -29,18 +29,20 @@
 
 
 #quiz-h1 {
-    font-size: var(--font-first);
+    font-size: var(--font-marks);
+    font-family: var(--font-family-marks);
+    font-weight: 400;
     position: relative;
     opacity: 0;
 }
 
 #quiz-h1::after {
-    content: "До встречи в июле";
+    content: "До встречи в июле!";
     position: absolute;
-    top: -32px; 
+    top: -28px; 
     left: 0;
     width: 100%;
-    font-size: 45px;
+    font-size: 50px;
     opacity: .17;
     /* filter: brightness(1.2); */
     color: gray;
@@ -52,6 +54,7 @@
     font-family: var(--font-family-other);
     opacity: 0;
     line-height: 1.6;
+    margin-bottom: 50px;
 }
 
 .btn-not {
@@ -83,8 +86,12 @@
 
 
 @media (max-width: 600px) {
+    #quiz-h1 {
+        font-size: 33px;
+    }
+
     #quiz-h1::after {
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .quiz::after {
@@ -92,15 +99,16 @@
         filter: brightness(1) opacity(0.2);  
     }
 
-    .quiz-p {
+    #quiz-p {
         line-height: 1.3;
+        font-size: 20px;
     }
     
 
 
 }
 
-@media (max-width: 300px) {
+@media (max-width: 349px) {
 
     #quiz-h1,
     #quiz-h1::after {

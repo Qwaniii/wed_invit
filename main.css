@@ -9,13 +9,17 @@
 @import url(./block/quiz.css);
 @import url(./block/form.css);
 @import url(./block/inTime.css);
+@import url(./block/color-code.css);
 
 
 :root {
   --font-first: 35px;
   --font-text: 24px;
+  --font-marks: 44px;
   --font-family-main: "Cormorant Infant", Georgia, 'Times New Roman', Times, serif;
   --font-family-other: "Podkova", Georgia, 'Times New Roman', Times, serif;
+  --font-family-marks: 'Marck Script', 'Times New Roman', Times, serif;
+  --font-family-pacifico: 'Pacifico', 'Times New Roman', Times, serif;
   --color-primary: rgba(252, 199, 169, 0.635);
   --color-text: rgb(116, 116, 116);
   --color-text-hover: rgba(252, 96, 96, 0.8);;

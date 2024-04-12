@@ -1,0 +1,72 @@
+.color-wedding {
+    min-height: var(--minimal-height-block);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.color-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.color-h1 {
+    font-size: var(--font-marks);
+    font-family: var(--font-family-marks);
+    font-weight: 400;
+    opacity: 0;
+}
+
+
+
+.color-p{
+    font-size: var(--font-text);
+    font-family: var(--font-family-other);
+    opacity: 0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.color-img-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 45px 0;
+}
+
+.color-img {
+    width: 150px;
+    opacity: 0;
+    filter: blur(0.7px);
+    transition: all .25s ease-in;
+}
+
+.color-img:hover {
+    scale: 2;
+    z-index: 2;
+    filter: blur(0px);
+}
+
+@media (max-width: 600px) {
+    .color-wedding {
+        margin-top: 30px;
+    }
+
+    .color-wrapper {
+        padding: 0 20px;
+    }
+
+    .color-p {
+        line-height: 1.3;
+        font-size: 20px;    
+    }
+
+    .color-img {
+        width: 110px;
+    }
+}

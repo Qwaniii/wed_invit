@@ -273,6 +273,22 @@ function updateScroll() {
       increaseNumberAnimationStep(0, fiveTime, 23, false, "00");
     }, 2800)
   }
+
+// блок дресс-код
+
+  let colorWedding = document.querySelector("#color-wed"),
+      colorH1 = document.querySelector(".color-h1"),
+      colorP = document.querySelector(".color-p"),
+      colorImage = document.querySelectorAll(".color-img")
+
+  windowBottomPosition >= colorWedding.offsetTop ? colorH1.style.animation = "var(--animation-scale) .3s forwards" : "none";
+  windowBottomPosition >= colorWedding.offsetTop ? colorP.style.animation = "var(--animation-block) 0.4s forwards" : "none";
+
+  if(windowBottomPosition >= colorWedding.offsetTop)  {
+    for (let i= 0 ; i < colorImage.length; i++) {
+      colorImage[i].style.animation = `var(--animation-block) ${i}.25s forwards`;
+    }
+  }
 }
  
 window.addEventListener('scroll', updateScroll);

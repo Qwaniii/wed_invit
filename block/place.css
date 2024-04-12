@@ -11,7 +11,9 @@
 }
 
 .place__main {
-    font-size: var(--font-first);
+    font-size: var(--font-marks);
+    font-family: var(--font-family-marks);
+    font-weight: 400;
     opacity: 0;
 }
 
@@ -22,7 +24,7 @@
     font-family: var(--font-family-other);
     opacity: 0;
     margin: 0;
-    line-height: 2;
+    line-height: 1.6;
 }
 
 .place__text>a {
@@ -70,6 +72,6 @@
 
 @media (max-width: 400px) {
     .place__text {
-       font-size: 18px;
+       font-size: 20px;
     }
 }

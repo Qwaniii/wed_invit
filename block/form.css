@@ -51,7 +51,9 @@
 }
 
 .first-form__header {
-    font-size: 36px;
+  font-size: var(--font-marks);
+  font-family: var(--font-family-marks);
+  font-weight: 400;
     padding-bottom: 15px;
 }
 
