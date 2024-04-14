@@ -17,7 +17,7 @@
     content: "";
     background: center /contain no-repeat url(../img/third.png);
     position: absolute;
-    top: 0px;
+    top: 50px;
     right: 0px;
     bottom: 0px;
     left: 0px;
@@ -35,6 +35,7 @@
 .family-text p{
     font-size: var(--font-text);
     font-family: var(--font-family-other);
+    text-align: justify;
 }
 
 
@@ -59,12 +60,18 @@
 
     .family-text::after {
         background: center /cover no-repeat url(../img/third.png);
-        filter: brightness(1.3) opacity(.2);
+        filter: brightness(1.3) opacity(.15);
+        top: 70px;
+    }
+
+    #dear {
+        margin: 15px 0;
     }
 
     #dear-text {
-        line-height: 1.2;
+        line-height: 1.5;
         font-size: 20px;
+        letter-spacing: 1px;
     }
 
 }

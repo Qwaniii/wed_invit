@@ -46,7 +46,8 @@
 }
 
 .ymaps-2-1-79-ground-pane {
-    filter:grayscale(1);
+    /* filter:grayscale(1); */
+    filter:hue-rotate(305deg) grayscale(.4);
 }
 
 .map-text {

@@ -56,11 +56,13 @@
     }
 
     .color-p {
-        line-height: 1.3;
-        font-size: 20px;    
+        line-height: 1.5;
+        font-size: 20px;
+        letter-spacing: 1px;
+        text-align: justify; 
     }
 
     .color-img {
-        width: 110px;
+        width: 100px;
     }
 }

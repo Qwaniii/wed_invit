@@ -64,8 +64,15 @@ function init(){
     let ourPlace = [55.784465, 37.672324];
 
     let myPlacemark = new ymaps.Placemark(ourPlace, {
+        // Зададим содержимое заголовка балуна.
+        balloonContentHeader: '<a href = "https://yandex.ru/maps/org/denis_davydov/1169463364/?ll=37.672505%2C55.784375&no-distribution=1&source=wizbiz_new_map_single&utm_source=share&z=21">Ресторан "Давыдов"</a><br>',
+        // Зададим содержимое основной части балуна.
+        balloonContentBody: '<img src="./img/davidov.jpg" height="150" width="100%"> <br/> ',
+        // Зададим содержимое нижней части балуна.
+        balloonContentFooter: 'Адрес:<br/>Москва, Русаковская ул., 13, стр. 5, этаж 2',
+        // Зададим содержимое всплывающей подсказки.            
         hintContent: 'Альянс Бородино',
-        balloonContent: '<span style="font-weight: 300; font-style: italic">Ресторан <strong>"Давыдов"</strong><br>Адрес: Русаковская улица, 13с5</span>'
+        // balloonContent: '<span style="font-weight: 300; font-style: italic">Ресторан <strong>"Давыдов"</strong><br>Адрес: Русаковская улица, 13с5</span>'
     }, {
         preset: 'islands#pinkHeartIcon',
     })
