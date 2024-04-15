@@ -33,9 +33,9 @@
 
 .color-img-wrap {
     display: flex;
-    max-height: fit-content;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
     gap: 10px;
     padding: 45px 0;
 }

@@ -98,11 +98,11 @@
 .img-time-start {
     object-fit: contain;
     height: 95%;
-    width: max-content;
+    /* width: max-content; */
     position: absolute;
     top: 50px;
-    /* left: 96px; */
-    margin-left: -128px;
+    left: 94px;
+    /* margin-left: -128px; */
     z-index: -2;
     filter: opacity(.2) brightness(1.3) blur() hue-rotate(-10deg);
 }
@@ -159,8 +159,8 @@
     } */
     
     .img-time-start {
-        /* left: 120px; */
-        margin-left: -6px;
+        left: 115px;
+        /* margin-left: -6px; */
         filter: opacity(.1) brightness(1.3) hue-rotate(-10deg);
     }
 
