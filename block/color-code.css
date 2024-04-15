@@ -33,6 +33,7 @@
 
 .color-img-wrap {
     display: flex;
+    max-height: fit-content;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
