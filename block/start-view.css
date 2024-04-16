@@ -4,7 +4,7 @@
     min-height: 100vh;
     min-height: 100svh;
     min-height: 100dvh;
-    min-height: -webkit-fill-available;
+    /* min-height: -webkit-fill-available; */
     /* min-height: calc(var(--vh, 1vh) * 100); */
     display: flex;
     flex-direction: column;
@@ -20,13 +20,15 @@
 
   .start-view::before {
     content: "";
-    background: center /cover no-repeat url(../img/background/1.jpg);
+    /* background: center /cover no-repeat url(../img/background/1.jpg); */
+    background: center /cover no-repeat url(../img/test2.jpg);
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    filter: opacity(.7) hue-rotate(10deg);
+    /* filter: opacity(.6) hue-rotate(10deg); */
+    filter: opacity(.4);
     z-index: -1;
   }
 
@@ -37,9 +39,8 @@
     min-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
-    gap: 50px;
 }
 
 .start-view__container h1 {
@@ -166,7 +167,7 @@
     }
 
     .start-view__container {
-        gap: 30px;
+        /* gap: 30px; */
     }
 
     .img_2 {
