@@ -151,8 +151,12 @@
     .day-time__inner {
         flex-direction: column;
         padding-left: 0;
-        gap: 10px;
+        /* gap: 10px; */
         margin-bottom: 65px;
+    }
+
+    .empty-span {
+        margin: 10px 0;
     }
 
     /* .img-time-start {
