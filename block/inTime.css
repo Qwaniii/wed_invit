@@ -21,7 +21,7 @@
     align-items: center;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
@@ -100,13 +100,13 @@
 }
 
 
+
 .img-time-start {
-    /* object-fit: contain; */
-    height: 95%;
+    height: 100%;
     /* width: max-content; */
     position: absolute;
     top: 50px;
-    left: 75px;
+    left: 72px;
     /* margin-left: -128px; */
     z-index: -2;
     filter: opacity(.2) brightness(1.3) blur() hue-rotate(-10deg);
@@ -144,10 +144,8 @@
 } */
 
 @media (max-width: 600px) {
-    .day-time {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
+    #time {        
+        height: 870px;
     }
 
     .day-time__inner {
@@ -164,10 +162,9 @@
     } */
     
     .img-time-start {
-        left: 128px;
+        left: 122px;
         /* margin-left: -6px; */
         filter: opacity(.06) brightness(1.3) hue-rotate(-10deg);
     }
-
 
 }
