@@ -41,8 +41,7 @@
     flex-direction: column;
     justify-content:flex-end;
     align-items: center;
-    padding: 20px 0;
-    box-sizing: border-box;
+
 }
 
 .start-view__container h1 {
@@ -66,7 +65,6 @@
     box-sizing: border-box;
     animation: var(--animation-block);
     animation-duration: 2s;
-    margin: 25px 0;
 }
 
 .bird {
@@ -170,6 +168,7 @@
 
     .start-view__container {
         /* gap: 30px; */
+
     }
 
     .img_2 {
@@ -185,6 +184,11 @@
 
     .img {
         max-width: 200px;
+    }
+
+    .start-view__container {
+        padding: 20px 0;
+        box-sizing: border-box;
     }
 
     .start-view__container h1 {
@@ -205,6 +209,8 @@
 
     .ok {
         width: 100%;
+        margin: 25px 0;
+
     }
 }
 
