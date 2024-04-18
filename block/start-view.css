@@ -21,14 +21,14 @@
   .start-view::before {
     content: "";
     /* background: center /cover no-repeat url(../img/background/1.jpg); */
-    background: center /cover no-repeat url(../img/test2.jpg);
+    background: center /cover no-repeat url(../img/test7.jpg);
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
     /* filter: opacity(.6) hue-rotate(10deg); */
-    filter: opacity(.4);
+    filter: opacity(1);
     z-index: -1;
   }
 
