@@ -41,6 +41,8 @@
     flex-direction: column;
     justify-content:flex-end;
     align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
 .start-view__container h1 {
@@ -64,7 +66,7 @@
     box-sizing: border-box;
     animation: var(--animation-block);
     animation-duration: 2s;
-
+    margin: 25px 0;
 }
 
 .bird {
