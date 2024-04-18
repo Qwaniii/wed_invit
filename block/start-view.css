@@ -2,8 +2,8 @@
 .start-view {
     position: relative;
     min-height: 100vh;
-    min-height: 100svh;
     min-height: 100dvh;
+    min-height: 100svh;
     /* min-height: -webkit-fill-available; */
     /* min-height: calc(var(--vh, 1vh) * 100); */
     display: flex;
@@ -39,7 +39,7 @@
     min-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content:flex-end;
     align-items: center;
 }
 
@@ -189,10 +189,11 @@
         /* font-family: var(--font-family-pacifico); */
         font-family: "Bad Script", 'Times New Roman', Times, serif;
         color: rgba(0, 0, 0);
-        -webkit-text-stroke: 0.5px var(--color-primary);
+        -webkit-text-stroke: 0.1px white;
         font-size: 22px;
         /* transform: scale(1, 2); */
-        letter-spacing: .5px;
+        letter-spacing: .3px;
+        margin: 30px 0 0 0;
     }
 
     #start-date {
