@@ -264,14 +264,14 @@ function updateScroll() {
       increaseNumberAnimationStep(0, secondTime, 16, false, "00")
     }, 900)
     setTimeout(function() {
-      increaseNumberAnimationStep(0, thirdTime, 19, false, "00");
+      increaseNumberAnimationStep(0, thirdTime, 23, false, "00");
     }, 1500)
-    setTimeout(function() {
-      increaseNumberAnimationStep(0, fourTime, 21, false, "00");
-    }, 2000)
-    setTimeout(function() {
-      increaseNumberAnimationStep(0, fiveTime, 23, false, "00");
-    }, 2800)
+    // setTimeout(function() {
+    //   increaseNumberAnimationStep(0, fourTime, 21, false, "30");
+    // }, 2000)
+    // setTimeout(function() {
+    //   increaseNumberAnimationStep(0, fiveTime, 23, false, "00");
+    // }, 2800)
   }
 
 // блок дресс-код
