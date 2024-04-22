@@ -21,7 +21,7 @@
   .start-view::before {
     content: "";
     /* background: center /cover no-repeat url(../img/background/1.jpg); */
-    background: center /cover no-repeat url(../img/test13.png);
+    background: center /cover no-repeat url(../img/background/backgr_1.png);
     position: absolute;
     top: 0px;
     right: 0px;
@@ -244,6 +244,8 @@
     .start-view__container {
         /* padding: 20px 0; */
         box-sizing: border-box;
+        margin-bottom: 30px;
+
     }
 
     .start-view__container h1 {
