@@ -277,18 +277,27 @@ function updateScroll() {
 // блок дресс-код
 
   let colorWedding = document.querySelector("#color-wed"),
-      colorH1 = document.querySelector(".color-h1"),
+      labelWed = document.querySelectorAll(".label_wed"),
       colorP = document.querySelector(".color-p"),
-      colorImage = document.querySelectorAll(".color-img")
+      mainLabel = document.querySelector(".main_label")
 
-  windowBottomPosition >= colorWedding.offsetTop ? colorH1.style.animation = "var(--animation-scale) .3s forwards" : "none";
-  windowBottomPosition >= colorWedding.offsetTop ? colorP.style.animation = "var(--animation-block) 0.4s forwards" : "none";
+    
+  windowBottomPosition >= mainLabel.offsetTop ? mainLabel.style.animation = "var(--animation-scale) 0.3s forwards" : "none";
 
-  if(windowBottomPosition >= colorWedding.offsetTop)  {
-    for (let i= 0 ; i < colorImage.length; i++) {
-      colorImage[i].style.animation = `var(--animation-block) ${i}.25s forwards`;
-    }
+
+  if(windowBottomPosition >= colorWedding.offsetTop) {
+      for (let i= 0 ; i < labelWed.length; i++) {
+        labelWed[i].style.animation = `var(--animation-block) ${i}.45s forwards`;
+      }
   }
+  
+  // windowBottomPosition >= colorWedding.offsetTop ? colorP.style.animation = "var(--animation-block) 0.4s forwards" : "none";
+
+  // if(windowBottomPosition >= colorWedding.offsetTop)  {
+  //   for (let i= 0 ; i < colorImage.length; i++) {
+  //     colorImage[i].style.animation = `var(--animation-block) ${i}.25s forwards`;
+  //   }
+  // }
 }
  
 window.addEventListener('scroll', updateScroll);
