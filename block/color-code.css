@@ -12,7 +12,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
 .main_label {
@@ -77,19 +78,19 @@
 }
 
 .color-wrapper .label_wed::after {
-    content: "\25C0"; 
+    content: "\27A4"; 
     position: absolute;
-    transform: translateY(-50%) rotate(-90deg);
+    transform: translateY(-50%) rotate(90deg);
     top: 50%;
     right: -45px;
-    font-size: 30px;
+    font-size: 27px;
     transition: .2s;
     color: var(--color-primary);
   }
 
   .color-wrapper.active .label_wed::after {
     top: 50%;
-    transform: translateY(-50%) rotate(-270deg);
+    transform: translateY(-50%) rotate(-90deg);
     color: rgba(73, 71, 71, 0.8);
   }
 
