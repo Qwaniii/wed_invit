@@ -1,0 +1,122 @@
+.color-wedding {
+    /* min-height: var(--minimal-height-block); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.color-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.main_label {
+    font-size: var(--font-marks);
+    font-family: var(--font-family-marks);
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0;
+}
+
+.label_wed {
+    font-size: 30px;
+    font-family: var(--font-family-main);
+    font-weight: 400;
+    opacity: 0;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+    transition: .2s;
+    box-sizing: border-box;
+}
+
+.label_wed:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+.color-p{
+    font-size: var(--font-text);
+    font-family: var(--font-family-other);
+    /* opacity: 0; */
+    margin: 0;
+    line-height: 1.5;
+}
+
+.color-img-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 45px 0;
+}
+
+.color-img {
+    width: 150px;
+    /* opacity: 0; */
+    transition: all .25s ease-in;
+}
+
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.color-wrapper.active .label_wed {
+    color: var(--color-primary);
+
+}
+
+.color-wrapper .label_wed::after {
+    content: "\27A4"; 
+    position: absolute;
+    transform: translateY(-50%) rotate(90deg);
+    top: 50%;
+    right: -45px;
+    font-size: 27px;
+    transition: .2s;
+    color: var(--color-primary);
+  }
+
+  .color-wrapper.active .label_wed::after {
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    color: rgba(73, 71, 71, 0.8);
+  }
+
+
+@media (max-width: 600px) {
+    .color-wedding {
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+    .main_label {
+        /* font-size: 33px; */
+    }
+
+    .label_wed {
+        /* font-size: 25px; */
+    }
+
+    .color-p {
+        line-height: 1.5;
+        font-size: 20px;
+        letter-spacing: 1px;
+        text-align: justify; 
+    }
+
+    .color-img {
+        width: 100px;
+    }
+}

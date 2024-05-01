@@ -1,0 +1,111 @@
+.chat {
+  min-height: var(--minimal-height-block);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
+  position: relative;
+}
+
+
+.chat::after {
+  content: "";
+  background: center /70% no-repeat url(../img/four.png);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+  filter: brightness(1.1) opacity(.5);
+}
+
+
+#chat-h1 {
+  font-size: var(--font-marks);
+  font-family: var(--font-family-marks);
+  font-weight: 400;
+  opacity: 0;
+}
+
+#chat-text {
+  font-size: var(--font-text);
+  font-family: var(--font-family-other);
+  opacity: 0;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  text-align: justify;
+}
+
+#btn-telegram {
+  background: linear-gradient(to top, #1891d1, #2faee7);
+  border: none;
+  filter: grayscale(0.1) opacity(.6) saturate(.8) drop-shadow(0px 15px 25px transparent) hue-rotate(180deg);
+}
+
+#btn-whatsapp {
+  background: linear-gradient(to top, #30b01f,  #55c83b);
+  border: none;
+  filter: grayscale(0.2) opacity(.6) saturate(.8) drop-shadow(0px 15px 25px transparent) hue-rotate(279deg);
+}
+
+#btn-telegram:hover,
+#btn-whatsapp:hover {
+  filter: grayscale(0) opacity(1) saturate(1) drop-shadow(0px 15px 25px #dca393);
+  animation: social-animate .2s ease-in-out ;
+}
+
+.inner-social {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: var(--font-family-other);
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+
+}
+
+.img-social {
+  width: 40px;
+}
+
+@media (max-width: 849px) {
+  .chat-main {
+      padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .chat::after {
+    background: center /cover no-repeat url(../img/four.png);
+    filter: brightness(1) opacity(0.3);
+  }
+
+  .inner-social {
+    line-height: 1;
+  }
+
+  #chat-text {
+    line-height: 1.5;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+  }
+}
+
+@keyframes social-animate {
+  0%{
+    filter: grayscale(.1) opacity(.7)  drop-shadow(0px 15px 25px transparent);
+  }
+  
+  100%{
+    filter: grayscale(0) opacity(1)  drop-shadow(0px 15px 25px #dca393);
+  }
+
+}

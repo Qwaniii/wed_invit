@@ -5,39 +5,52 @@
 @import url(./block/start-view.css);
 @import url(./block/place.css);
 @import url(./block/date.css);
+@import url(./block/chat.css);
+@import url(./block/quiz.css);
+@import url(./block/form.css);
+@import url(./block/inTime.css);
+@import url(./block/color-code.css);
 
 
 :root {
   --font-first: 35px;
-  --font-text: 20px;
-  --font-family-main: "Cormorant Infant", serif;
-  --font-family-other: "Podkova", serif;
-  --color-primary: rgb(255, 202, 122);
+  --font-text: 24px;
+  --font-marks: 44px;
+  --font-family-main: "Cormorant Infant", Georgia, 'Times New Roman', Times, serif;
+  --font-family-other: "Podkova", Georgia, 'Times New Roman', Times, serif;
+  --font-family-marks: 'Marck Script', 'Times New Roman', Times, serif;
+  --font-family-pacifico: 'Pacifico', 'Times New Roman', Times, serif;
+  --font-bad-script: 'Bad Script', 'Times New Roman', Times, serif;
+  --color-primary: rgba(252, 199, 169, 0.635);
   --color-text: rgb(116, 116, 116);
-  --color-text-hover: rgba(219, 137, 82, 0.87);;
-  --color-back-light: rgba(253, 197, 112, 0.4);
-  --color-button:  #ffab6796;
-  --color-button-hover:  #ffab67c9;
+  --color-text-hover: rgba(252, 96, 96, 0.8);;
+  --color-back-light: rgba(247, 161, 140, 0.25);
+  --color-button:  rgba(252, 181, 169, 0.863);
+  --color-button-hover:  #fca292;
   --minimal-height-block: 600px;
   --animation-block: fadeRightIn 1s linear;
-  --animation-scale: scaleFade .7s linear;
+  --animation-scale: scaleFade 1.2s ease-out;
 }
 
+
+/* ================== test =====================*/
 
 
 /* скролбар */
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 2px;
+  
 }
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
   background-color: #f9f9fd;
+  border-radius: 50%;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #f2bf93;
+  background-color: #f2939381;
   background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .25) 25%,
                     transparent 25%,
                     transparent 50%,
@@ -49,16 +62,91 @@
 
 /* --------------------- */
 
+
 body {
     margin: 0;
     font-family: var(--font-family-main);
-    overflow-x: hidden
+    overflow-x: hidden;
+}
+
+html.popup-active,
+body.popup-active {
+  /* height: 100%; */
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+button {
+  text-decoration: none;
+  color: inherit;
 }
 
 .container-main {
   width: 100%;
   max-width: 850px;
   margin: 0 auto;
+}
+
+.btn-main-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* padding: 0 10px; */
+}
+
+.btn {
+  font-family: var(--font-family-other);
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: linear-gradient(to top, #dca393,  #e9bdae);
+  border: .3px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  color: white;
+  font-size: var(--font-text);
+  transition: all .5s;
+  box-sizing: border-box;
+  overflow: hidden;
+  opacity: 0;
+  outline: none;
+}
+
+.btn-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-85px);
+  /* filter: blur(10) brightness(3); */
+  animation: buttonColor 2.5s ease-out infinite forwards;
+}
+
+.btn-effect {
+  background: linear-gradient(90deg, rgba(255, 155, 72, 0.01), rgba(255, 219, 172, 0.3));
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -30px;
+  transform: skewX(-45deg);
+}
+
+.btn:hover {
+  background: linear-gradient(to top, #dda08f,  #e7b7a7);
+  border: .1px solid transparent;
+}
+
+.btn:active,
+.btn:focus {
+  border: .1px solid #dda08f;
+
 }
 
   /* animation settings */
@@ -90,8 +178,8 @@ body {
     opacity: 0;
   }
 
-  87% {
-    transform: scale(1.03);
+  60% {
+    transform: scale(1.05);
     opacity: 0.93;
 
   }
@@ -101,6 +189,18 @@ body {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+@keyframes buttonColor {
+  50% {
+    transform:translateX(-100%);
+
+  }
+
+  100% {
+    transform:translateX(150%);
+  }
+
 }
 
 @-webkit-keyframes fadeRightIn {
@@ -126,15 +226,38 @@ body {
     -webkit-opacity: 0;
   }
 
-  87% {
-    -webkit-transform: scale(1.03);
+  60% {
+    -webkit-transform: scale(1.05);
     -webkit-opacity: 0.93;
 
   }
-
 
   100% {
     -webkit-transform: scale(1);
     -webkit-opacity: 1;
   }
 }
+
+@-webkit-keyframes buttonColor {
+  50% {
+    -webkit-transform:translateX(-100%);
+
+  }
+
+  100% {
+    -webkit-transform:translateX(150%);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .btn-main-wrapper {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
+
+
+
+

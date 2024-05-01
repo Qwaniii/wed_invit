@@ -1,4 +1,4 @@
-const ourDate = new Date(2024, 06, 27, 17, 00, 00).getTime()
+const ourDate = new Date(2024, 06, 27, 15, 30, 00).getTime()
 
 const timerDays = document.querySelector("#days");
 const timerHours = document.querySelector("#hours");

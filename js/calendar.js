@@ -17,7 +17,8 @@ for(let  i = 1; i <= D1last; i++) {
   if (i != D1.getDate()) {
     calendar1 += '<td>' + i;
   }else{
-    calendar1 += '<td class="animate__animated animate__heartBeat animate__infinite	infinite" id="wedding-day">' + i;  // сегодняшней дате можно задать стиль CSS
+    // calendar1 += '<td class="animate__animated animate__heartBeat animate__infinite	infinite" id="wedding-day">' + i;  // сегодняшней дате можно задать стиль CSS
+    calendar1 += '<td id="wedding-day">' + i;  // сегодняшней дате можно задать стиль CSS
   }
   if (new Date(D1.getFullYear(),D1.getMonth(),i).getDay() == 0) {  // если день выпадает на воскресенье, то перевод строки
     calendar1 += '<tr>';
