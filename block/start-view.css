@@ -154,7 +154,7 @@
 }
 
 .number::after {
-    content: "15:30";
+    content: "15:00";
     position: absolute;
     bottom: -15px;
     left: 50%;
