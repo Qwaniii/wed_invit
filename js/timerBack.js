@@ -14,28 +14,27 @@ let timer = setInterval(function() {
     let now = new Date().getTime()
     let distance = ourDate - now;
 
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    let days = Math.abs(Math.floor(distance / (1000 * 60 * 60 * 24)));
+    let hours = Math.abs(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    let minutes = Math.abs(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+    let seconds = Math.abs(Math.floor((distance % (1000 * 60)) / 1000));
     
     timerDays.innerHTML = days < 10 ? "0" + days : days
     timerHours.innerHTML = hours < 10 ? "0" + hours : hours
     timerMinutes.innerHTML = minutes < 10 ? "0" + minutes : minutes
     timerSeconds.innerHTML = seconds < 10 ? "0" + seconds : seconds
 
-    endSec.innerHTML = declOfNum(seconds, ["секунда", "секунды", "секунд" ])
-    endMin.innerHTML = declOfNum(minutes, ["минута", "минуты", "минут" ])
-    endHour.innerHTML = declOfNum(hours, ["час", "часа", "часов" ])
-    endDay.innerHTML = declOfNum(days, ["день", "дня", "дней" ])
+    endSec.innerHTML = declOfNum( seconds, ["секунда", "секунды", "секунд" ])
+    endMin.innerHTML = declOfNum( minutes, ["минута", "минуты", "минут" ])
+    endHour.innerHTML = declOfNum( hours, ["час", "часа", "часов" ])
+    endDay.innerHTML = declOfNum( days, ["день", "дня", "дней" ])
 
-    if(distance < 0) {
-        clearInterval(timer);
-        timerDays.innerHTML = 0
-        timerHours.innerHTML = 0
-        timerMinutes.innerHTML = 0
-        timerSeconds.innerHTML = 0
-    }
+    // if(distance < 0) {
+    //     timerDays.innerHTML = days < 10 ? "0" + days : days
+    //     timerHours.innerHTML = hours < 10 ? "0" + hours : hours
+    //     timerMinutes.innerHTML = minutes < 10 ? "0" + minutes : minutes 
+    //     timerSeconds.innerHTML = seconds < 10 ? "0" + seconds :  seconds
+    // }
 
 }, 1000)
 
